@@ -1,0 +1,6 @@
+<%= simple_form_for (fidelity_program) do |f| %>
+<%= f.input :name %>
+<p>1€ = </p><%= f.input :points_per_euro %>
+<%# bouton ajout de produit qui m'amène vers une pop up pour renseigner le nom, la description, et les points requis %>
+<%= f.submit %>
+<% end %>
