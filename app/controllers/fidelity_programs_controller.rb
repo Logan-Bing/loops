@@ -18,6 +18,9 @@ class FidelityProgramsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def update
     if @fidelity_program.update(set_params)
       redirect_to fidelity_path(@fidelity_program)
