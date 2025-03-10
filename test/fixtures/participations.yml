@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  point: 1
+  inscription: one
+  created_at: 2025-03-10 14:43:38
+
+two:
+  point: 1
+  inscription: two
+  created_at: 2025-03-10 14:43:38

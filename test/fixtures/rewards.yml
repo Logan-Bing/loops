@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fidelity_program: one
+  name: MyString
+  description: MyString
+  points_required: 1
+
+two:
+  fidelity_program: two
+  name: MyString
+  description: MyString
+  points_required: 1
