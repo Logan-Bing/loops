@@ -12,6 +12,11 @@
   </head>
 
   <body>
+    <% if current_user.customer? %>
+      <%= render 'customers/navbar' %>
+    <% else %>
+      <%= render 'merchants/navbar' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
