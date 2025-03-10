@@ -33,6 +33,7 @@ gem "jbuilder"
 # gem "kredis"
 
 gem "devise"
+gem "pundit"
 
 gem "sassc-rails"
 
