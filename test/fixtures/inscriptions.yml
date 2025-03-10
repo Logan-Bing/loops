@@ -3,9 +3,9 @@
 one:
   user: one
   fidelity_program: one
-  created_at: 2025-03-10 14:41:23
+  created: 2025-03-10 15:37:27
 
 two:
   user: two
   fidelity_program: two
-  created_at: 2025-03-10 14:41:23
+  created: 2025-03-10 15:37:27

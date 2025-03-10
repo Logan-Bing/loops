@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  points: 1
   inscription: one
-  created: 2025-03-10 15:38:16
+  reward: one
 
 two:
-  points: 1
   inscription: two
-  created: 2025-03-10 15:38:16
+  reward: two
