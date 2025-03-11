@@ -3,6 +3,7 @@ class FidelityProgramsController < ApplicationController
 
   def index
     @fidelity_programs = policy_scope(FidelityProgram)
+    @fidelity_programs = FidelityProgram.all
   end
 
   def new
