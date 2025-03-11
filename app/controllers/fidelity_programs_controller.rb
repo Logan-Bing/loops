@@ -7,10 +7,11 @@ class FidelityProgramsController < ApplicationController
 
   def new
     @fidelity_program = FidelityProgram.new
+    @fidelity_program.rewards.build
   end
 
   def create
-    @fidelity_program = @fidelity_program.new(set_params)
+    @fidelity_program = Fidelity_program.new(set_params)
     @fidelity_program.user_id = current_user.id
     if @fidelity_program.save
       redirect_to fidelity_program_path(@fidelity_program)
