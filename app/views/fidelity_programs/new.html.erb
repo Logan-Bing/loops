@@ -1,1 +1,20 @@
-<%= render "shared/form" %>
+<div class="container">
+  <div class="container-form">
+<%= simple_form_for @fidelity_program do |f| %>
+<div id="input-fidelity-program">
+  <h2>Nom du Programme de Fidélité</h2>
+  <%= f.input :name, label: false %>
+  <%= f.input :points_per_euro, label: "Points par euros dépensés" %>
+</div>
+  <%= f.simple_fields_for :rewards do |r| %>
+    <%= r.input :name, label: "Nom de la récompense" %>
+    <%= r.input :description %>
+    <%= r.input :points_required, label: "Points requis"%>
+    <%= r.button :submit, "Ajouter la récompense ", name: :add_reward %>
+  <% end %>
+  <%= f.submit "Enregistrer le programme" %>
+<% end %>
+
+  </div>
+
+</div>
