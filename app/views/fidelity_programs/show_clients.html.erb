@@ -1,0 +1,14 @@
+<h1>Liste clients </h1>
+
+
+<ul>
+<% @fidelity_programs.each do |program| %>
+  <% program.inscriptions.each do |user| %>
+    <li>
+    <%= user.user.email %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+<%= link_to "Back", root_path %>
