@@ -1,0 +1,15 @@
+// COMPONENTS FILE
+@import "color";
+
+//Border Variables
+$border-rounded: 12px;
+
+.primary-btn{
+  background-color: $primary-color;
+  color: $button-color;
+  border-radius: $border-rounded;
+  padding: 12px 42px 12px 42px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 6%;
+}
