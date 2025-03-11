@@ -7,14 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-merchant = User.create!()
+merchant = User.create!(email: "msouvann1@gmail.com", password: "testtest", password_confirmation: "testtest", role: "merchant")
+puts "merchant créé"
 
 fidelity_one = FidelityProgram.create!(name: "test", points_per_euro: 1, user: merchant)
 puts "Programme test créé"
 
 puts "Done! #{FidelityProgram.count} programmes créés!"
 
-customer_one = User.create!(name: "Michael", phone_number: "0123456789", role: "customer")
+customer_one = User.create!(name: "Manon", phone_number: "0123456789", role: "customer")
 puts "Customer Michael créé"
 
 customer_two = User.create!(name: "Logan", phone_number: "0123456987", role: "customer")
