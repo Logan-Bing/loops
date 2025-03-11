@@ -1,9 +1,10 @@
 
-  <h1>FP show page</h1>
+<h1>FP show page</h1>
 
 <h1><%= @fidelity_program.name %></h1>
 
 <h4>QR code du programme à présenter aux clients :</h4>
-<%= image_tag(url_for(@fidelity_program.qrcode)) %>
+<%= @svg.html_safe %>
+<%= link_to "Delete", fidelity_program_path(@fidelity_program), data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression du programme ?"} %>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", fidelity_programs_path %>
