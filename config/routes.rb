@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :fidelity_programs do
     resources :rewards
   end
-  
+
+  get "/customers", to: "fidelity_programs#show_clients", as: :customers
+
 end

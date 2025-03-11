@@ -39,6 +39,10 @@ class FidelityProgramsController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def show_clients
+    @fidelity_programs = FidelityProgram.all
+  end
+
   private
 
   def set_params

@@ -26,7 +26,13 @@ puts "Done! #{FidelityProgram.count} programmes créés!"
 customer_one = User.create!(email: "msouvann2@gmail.com", password: "testtest", password_confirmation: "testtest", role: "customer")
 puts "Customer one créé"
 
+inscription_one = Inscription.create!(user_id: customer_one.id, fidelity_program_id: fidelity_one.id)
+puts "Inscription one créé"
+
 customer_two = User.create!(email: "msouvann3@gmail.com", password: "testtest", password_confirmation: "testtest", role: "customer")
 puts "Customer two créé"
 
-puts "Done! Customers créés!"
+inscription_two = Inscription.create!(user_id: customer_two.id, fidelity_program_id: fidelity_one.id)
+puts "Inscription one créé"
+
+puts "Done! All créés!"
