@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   resources :fidelity_programs do
     resources :rewards
   end
-  
 end
