@@ -4,11 +4,12 @@ class FidelityProgram < ApplicationRecord
   has_many :inscriptions, dependent: :destroy
 
 
-  accepts_nested_attributes_for :rewards
+  accepts_nested_attributes_for :rewards, allow_destroy: true
 
   has_one_attached :qrcode, dependent: :destroy
 
   before_commit :generate_qrcode, on: :create
+  before_commit :remove_empty_reward, on: :create
 
   private
 
@@ -41,5 +42,11 @@ class FidelityProgram < ApplicationRecord
       filename: "qrcode.png",
       content_type: "image/png",
     )
+  end
+
+  def remove_empty_reward
+    rewards.each do |reward|
+      reward.destroy if reward.description.blank?
+    end
   end
 end

@@ -11,12 +11,21 @@ class FidelityProgramsController < ApplicationController
   end
 
   def create
-    @fidelity_program = Fidelity_program.new(set_params)
-    @fidelity_program.user_id = current_user.id
-    if @fidelity_program.save
-      redirect_to fidelity_program_path(@fidelity_program)
-    else
-      render :new, status: :unprocessable_entity
+    @fidelity_program = FidelityProgram.new(set_params)
+    @fidelity_program.user = current_user
+
+    respond_to do |format|
+      if params[:add_reward]
+        @fidelity_program.rewards.build
+        
+        format.html { render :new, status: :unprocessable_entity }
+      else
+        if @fidelity_program.save
+          format.html { redirect_to @fidelity_program }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+        end
+      end
     end
   end
 
@@ -47,7 +56,7 @@ class FidelityProgramsController < ApplicationController
   private
 
   def set_params
-    params.require(:fidelity_program).permit(:name, :points_per_euro, :qrcode, rewards: [:id, :name, :description, :points_required])
+    params.require(:fidelity_program).permit(:name, :points_per_euro, :qrcode, rewards_attributes: [:id, :name, :description, :points_required, :_destroy])
   end
 
   def find_id
