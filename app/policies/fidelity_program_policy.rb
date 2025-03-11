@@ -28,7 +28,7 @@ class FidelityProgramPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      if user.customer?
+      if user.role == "customer"
         scope.joins(:inscriptions).where(inscriptions: { user: user })
       else
         scope.where(user: user)
