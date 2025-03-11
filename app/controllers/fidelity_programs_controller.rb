@@ -11,7 +11,7 @@ class FidelityProgramsController < ApplicationController
   end
 
   def create
-    @fidelity_program = Fidelity_program.new(set_params)
+    @fidelity_program = FidelityProgram.new(set_params)
     @fidelity_program.user_id = current_user.id
     if @fidelity_program.save
       redirect_to fidelity_program_path(@fidelity_program)
@@ -21,6 +21,14 @@ class FidelityProgramsController < ApplicationController
   end
 
   def show
+    @qrcode = RQRCode::QRCode.new(fidelity_program_path(@fidelity_program))
+    @svg = @qrcode.as_svg(
+      color: "000",
+      shape_rendering: "crispEdges",
+      module_size: 11,
+      standalone: true,
+      use_path: true
+    )
   end
 
   def edit
