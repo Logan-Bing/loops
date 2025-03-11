@@ -3,6 +3,9 @@ class FidelityProgram < ApplicationRecord
   has_many :rewards, dependent: :destroy
   has_many :inscriptions, dependent: :destroy
 
+
+  accepts_nested_attributes_for :rewards
+
   has_one_attached :qrcode, dependent: :destroy
 
   before_commit :generate_qrcode, on: :create
@@ -39,6 +42,4 @@ class FidelityProgram < ApplicationRecord
       content_type: "image/png",
     )
   end
-
-  accepts_nested_attributes_for :rewards
 end
