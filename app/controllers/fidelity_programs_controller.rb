@@ -21,7 +21,7 @@ class FidelityProgramsController < ApplicationController
   end
 
   def show
-    qrcode_url = "#{request.protocol}#{request.host}#{fidelity_program_path(@fidelity_program)}"
+    qrcode_url = "#{request.protocol}#{request.host}#{new_user_session_path}"
     @qrcode = RQRCode::QRCode.new(qrcode_url)
     @svg = @qrcode.as_svg(
       color: "000",
