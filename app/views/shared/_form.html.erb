@@ -5,6 +5,14 @@
 <%= f.input :points_per_euro %>
 </div>
 
+<h3>Ajouter une récompense</h3>
+<%= f.fields_for :rewards do |reward_fields| %>
+  <div>
+    <%= reward_fields.label :name, "Nom de la récompense"%>
+    <%= reward_fields.text_field :name %>
+  </div>
+<% end %>
+
 <%# bouton ajout de produit qui m'amène vers une pop up pour renseigner le nom, la description, et les points requis %>
-<%= f.submit %>
+<%= f.submit "Enregistrer" %>
 <% end %>

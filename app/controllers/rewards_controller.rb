@@ -10,7 +10,7 @@ class RewardsController < ApplicationController
     @reward.fidelity_program = @fidelity_program
 
     if @reward.save
-      redirect_to fidelity_program_path(@fidelity_program)
+      redirect_to new_fidelity_program
     else
       render :new, status: :unprocessable_entity
     end
