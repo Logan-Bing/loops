@@ -1,3 +1,7 @@
 
   <h1>FP show page</h1>
 
+<h1><%= @fidelity_program.name %></h1>
+
+<h4>QR code du programme à présenter aux clients :</h4>
+<%= image_tag(url_for(@fidelity_program.qrcode)) %>
