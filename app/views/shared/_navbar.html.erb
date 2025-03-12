@@ -1,40 +1,40 @@
-<div class="side-bar">
+<div class="side-bar" data-controller="navbutton" >
   <div class="side-container">
-    <div class="section active">
+    <div class="section active" data-action="click->navbutton#change" data-navbutton-target="navElement">
       <div class="nav-i-container">
         <i class="fa-solid fa-house nav-icon"></i>
       </div>
-      <%= link_to "Accueil", pages_home_path, class:"link" %>
+      <%=  link_to "Accueil", pages_home_path, class:"link" %>
     </div>
-    <div class="section">
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement">
       <div class="nav-i-container">
         <i class="fa-solid fa-handshake nav-icon"></i>
       </div>
       <%= link_to "Programme", fidelity_programs_path, class:"link" %>
     </div>
-    <div class="section">
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement">
       <div class="nav-i-container">
         <i class="fa-solid fa-circle-user nav-icon"></i>
       </div>
         <%= link_to "Clients", customers_path, class:"link" %>
     </div>
-    <div class="section">
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement">
       <div class="nav-i-container">
         <i class="fa-solid fa-shop nav-icon"></i>
       </div>
-      <%= link_to "Établissement", pages_home_path, class:"link" %>
+      <%= link_to "Établissement", etablissement_path, class:"link" %>
     </div>
-    <div class="section">
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement">
       <div class="nav-i-container">
         <i class="fa-solid fa-chart-simple nav-icon"></i>
       </div>
-      <%= link_to "Performances", pages_home_path, class:"link" %>
+      <%= link_to "Performances", performances_path, class:"link" %>
     </div>
-    <div class="section">
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement" >
       <div class="nav-i-container">
         <i class="fa-solid fa-gear nav-icon"></i>
       </div>
-      <%= link_to "Paramètres", pages_home_path, class:"link" %>
+      <%= link_to "Paramètres", settings_path, class:"link" %>
     </div>
   </div>
 </div>
