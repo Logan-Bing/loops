@@ -1,0 +1,13 @@
+<h1>Participation ajoutée !</h1>
+
+<p>nom du programme</p>
+<%= @inscription.fidelity_program.name %>
+
+<% if @inscription.participations.last.points < 0 %>
+  <p><%= (@inscription.participations.last.points).abs %> points ont été déduits
+  </p>
+<% else %>
+  <p><%= (@inscription.participations.last.points).abs %> points ont été ajoutés</p>
+<% end %>
+
+<%= link_to "Back", fidelity_program_inscription_path(@fidelity_program, @inscription) %>

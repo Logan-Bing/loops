@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  font-family: 'inter';
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#input-fidelity-program{
+  display: flex;
+  flex-direction: column;
+}
