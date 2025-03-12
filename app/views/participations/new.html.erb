@@ -1,0 +1,45 @@
+<h1>new participation view page</h1>
+
+<h5>Fidelity program name:</h5>
+<p><%= @inscription.fidelity_program.name %></p>
+<h5>Member ID:</h5>
+<p><%= @inscription.user.email %></p>
+
+<h5>Solde actuel:</h5>
+<% @inscription.participations.each do |participation| %>
+<% @sum += participation.points %>
+<% end %>
+<%= @sum %>
+
+<div id="participation-form" data-controller="toggle-participation">
+<form>
+  <input type="radio" id="html" name="participation" value="add" data-action="click->toggle-participation#showAdd">
+  <label for="add">Add points</label><br>
+  <input type="radio" id="css" name="participation" value="deduct" data-action="click->toggle-participation#showDeduct">
+  <label for="deduct">Deduct points</label><br>
+</form>
+
+<div style="display:none" data-toggle-participation-target="add">
+<%= simple_form_for [@fidelity_program, @inscription, @participation] do |f| %>
+  <%= hidden_field_tag "mode", "add" %>
+  <%= f.input :points, label: "Points to add", input_html: { min: '0', max: '100', step: '10' } %>
+  <%= f.button :submit, "Validate" %>
+<% end %>
+</div>
+
+<div style="display:none" data-toggle-participation-target="deduct">
+<%= simple_form_for [@fidelity_program, @inscription, @participation] do |f| %>
+  <%= hidden_field_tag "mode", "deduct" %>
+  <%= f.input :points, label: "Points to deduct",  input_html: { min: '0', max: '100', step: '10' } %>
+  <%= f.button :submit, "Validate" %>
+<% end %>
+</div>
+</div>
+
+<br>
+<br>
+inscription.participations.points.sum
+appeler le total des points acquis du user pour pouvoir déduire
+blocage = ne pas déduire de points si le solde est nul ou insuffisant.
+
+http://localhost:3000/fidelity_programs/12/inscriptions/1/participations/new
