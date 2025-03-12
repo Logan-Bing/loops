@@ -77,4 +77,5 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = false
   config.hosts.clear
   config.hosts << /.*\.ngrok-free\.app$/
+  config.hosts << "localhost:3000"
 end

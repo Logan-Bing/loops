@@ -7,11 +7,17 @@
     <%= csp_meta_tag %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <script src="https://kit.fontawesome.com/69af44d716.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/header"%>
+    <div class="main-container">
+      <%= render "shared/navbar"%>
+      <%= yield %>
+    </div>
   </body>
+
 </html>

@@ -56,7 +56,6 @@ class FidelityProgramsController < ApplicationController
   private
 
   def set_params
-
     params.require(:fidelity_program).permit(:name, :points_per_euro, :qrcode, rewards: [:id, :name, :description, :points_required])
   end
 
