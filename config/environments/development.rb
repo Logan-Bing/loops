@@ -1,6 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  Rails.application.routes.default_url_options = { host: 'localhost', port: '3000' }
   # Settings specified here will take precedence over those in config/application.rb.
   # config.action_controller.default_url_options = { host: "localhost:3000", port: 3000 }
 
@@ -75,6 +76,6 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = false
-  config.hosts.clear
+
   config.hosts << /.*\.ngrok-free\.app$/
 end
