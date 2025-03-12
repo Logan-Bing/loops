@@ -1,10 +1,11 @@
 class FidelityProgram < ApplicationRecord
+  include Abyme::Model
   belongs_to :user
   has_many :rewards, dependent: :destroy
   has_many :inscriptions, dependent: :destroy
   accepts_nested_attributes_for :rewards
   has_one_attached :qrcode, dependent: :destroy
-
+  abymize :rewards
 
   accepts_nested_attributes_for :rewards, allow_destroy: true
 
@@ -16,15 +17,11 @@ class FidelityProgram < ApplicationRecord
   private
 
   def generate_qrcode
-    # Get the host
-    # host = Rails.application.routes.default_url_options[:host]
-    host = Rails.application.config.action_controller.default_url_options[:host]
+    # host = ENV['HOST']
 
-    # Create the QR code object
-    # qrcode = RQRCode::QRCode.new("http://#{host}/posts/#{id}")
-    qrcode = RQRCode::QRCode.new("http://#{:host}/fidelity_programs/#{:id}")
+    url = Rails.application.routes.url_helpers.fidelity_program_url(self.id)
+    qrcode = RQRCode::QRCode.new(url)
 
-    # Create a new PNG object
     png = qrcode.as_png(
       bit_depth: 1,
       border_modules: 4,
@@ -38,7 +35,6 @@ class FidelityProgram < ApplicationRecord
       size: 120,
     )
 
-    # Attach the QR code to the active storage
     self.qrcode.attach(
       io: StringIO.new(png.to_s),
       filename: "qrcode.png",
