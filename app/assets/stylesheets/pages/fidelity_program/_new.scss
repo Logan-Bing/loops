@@ -1,13 +1,17 @@
+
 *{
   margin: 0;
   font-family: 'inter';
 }
 
-#inline {
+.container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-top: 100px;
 }
 
-#inline p {
-  margin-right: 10px;
+#input-fidelity-program{
+  display: flex;
+  flex-direction: column;
 }

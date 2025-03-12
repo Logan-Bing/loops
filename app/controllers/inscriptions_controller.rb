@@ -3,6 +3,7 @@ class InscriptionsController < ApplicationController
   def new
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
     @inscription = Inscription.new
+    @sum = 0
   end
 
   def create
@@ -17,6 +18,14 @@ class InscriptionsController < ApplicationController
   end
 
   def show
+    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
+    @inscription = Inscription.find(params[:id])
+    @sum = 0
+  end
+
+  def status
+    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
+    @inscription = Inscription.find(params[:id])
   end
 
   private

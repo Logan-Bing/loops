@@ -1,12 +1,19 @@
 
 <% if current_user.role == "merchant" %>
 
-
   <h1>Loops merchant dashboard</h1>
+
 
   <%= link_to "Créer un nouveau programme", new_fidelity_program_path %>
   <% else %>
   <%= render "shared/header_customer" %>
 
   <h1>Loops customer view</h1>
+
+  <p>à ajouter :</p>
+
+<ul>
+<li>total points acquis</li>
+<li>historique des récompenses</li>
+</ul>
   <% end %>
