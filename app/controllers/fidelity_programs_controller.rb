@@ -17,7 +17,6 @@ class FidelityProgramsController < ApplicationController
     respond_to do |format|
       if params[:add_reward]
         @fidelity_program.rewards.build
-        
         format.html { render :new, status: :unprocessable_entity }
       else
         if @fidelity_program.save

@@ -2,8 +2,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-//= require cocoon
-$(document).on('turbolinks:load', function() {
-  $('.nested-fields').cocoon();
-});
-//= require jquery3
+
+import HideFormController from "./controllers/hide_form.js"
+Stimulus.register("hide-button", HideFormController)
