@@ -1,22 +1,12 @@
 
 <% if current_user.role == "merchant" %>
-<%= render "shared/navbar" %>
 
   <h1>Loops merchant dashboard</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
 
-  <p>Accueil</p>
-  <%= link_to "Programme", fidelity_programs_path %>
-  <br>
-  <%= link_to "Clients", customers_path %>
-  <br>
-  <p>Performances</p>
-  <p>Etablissements</p>
-  <p>Paramètres</p>
 
   <%= link_to "Créer un nouveau programme", new_fidelity_program_path %>
   <% else %>
-  <%= render "shared/navbar" %>
+  <%= render "shared/header_customer" %>
 
   <h1>Loops customer view</h1>
 
