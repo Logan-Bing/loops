@@ -10,6 +10,7 @@ class InscriptionsController < ApplicationController
     @inscription = Inscription.new(set_params)
     @inscription.user_id = current_user.id
     @inscription.fidelity_program_id = params[:fidelity_program_id]
+    @inscription.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
     if @inscription.save
       redirect_to fidelity_program_inscription_path(@inscription)
     else
