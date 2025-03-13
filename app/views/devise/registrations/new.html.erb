@@ -15,8 +15,8 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.collection_radio_buttons  :role, [['merchant', 'merchant'] ,['customer', 'customer']],:first, :last,
-                                    required: true %>
+    <%= f.input :role, as: :radio_buttons, collection: ["merchant", "customer"],
+                required: true %>
   <%= hidden_field_tag :fidelity_program_id, params[:id] if params[:id].present? %>
   </div>
   <div class="form-actions">
