@@ -15,9 +15,13 @@ class FidelityProgramsController < ApplicationController
     @fidelity_program.user = current_user
     @fidelity_program.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
     @fidelity_program.active = true
-
+    raise
+    if params[:rewards_attributes]
+      @fidelity_program.rewards.build
+      format.html { render :new, status: :unprocessable_entity }
+    end
     respond_to do |format|
-      if params[:add_reward]
+      if params[:rewards_attributes]
         @fidelity_program.rewards.build
         format.html { render :new, status: :unprocessable_entity }
       else
