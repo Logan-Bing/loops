@@ -1,0 +1,14 @@
+
+<h5>Nom du produit</h5>
+<%= f.input :name, label: false %>
+<h5>Description du produit</h5>
+<%= f.input :description, label: false %>
+<h5>Nombre de points requis</h5>
+<%= f.input :points_required, label: false %>
+<%= f.hidden_field :_destroy %>
+
+<button class="delete">
+<%= remove_associated_record(tag: :div) do %>
+  <i class="fas fa-trash"></i> Supprimer
+<% end %>
+</button>

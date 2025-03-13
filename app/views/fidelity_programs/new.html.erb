@@ -1,1 +1,21 @@
-<%= render "shared/form" %>
+<div class="container">
+  <div class="container-form">
+    <%= simple_form_for @fidelity_program do |f| %>
+      <h5>Nom du Programme de Fidélité</h5>
+      <%= f.input :name, label: false %>
+      <h5>Points par euros dépensés</h5>
+      <%= f.input :points_per_euro, label: false %>
+    </div> <!-- Fermeture de la div .container-form -->
+
+      <%= f.abyme_for(:rewards, partial: 'abyme/rewards_fields') do |abyme| %>
+        <%= abyme.records %>
+        <%= abyme.new_records %>
+        <%= add_associated_record%>
+      <% end %>
+
+  </div>
+
+  <div>
+    <%= f.submit 'Enregistrer le programme' %>
+  <% end %>
+</div>

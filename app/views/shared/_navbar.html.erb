@@ -1,17 +1,40 @@
-<div class="header">
-  <div class="header-text">
-    <h1>LOOPS.</h1><span>Manager</span>
-  </div>
-  <div class="header-icon">
-    <div class="icon-container">
-      <%= image_tag "Group.png", alt:"avatar" %>
+<div class="side-bar" data-controller="navbutton" >
+  <div class="side-container">
+    <div class="section active" data-action="click->navbutton#change" data-navbutton-target="navElement">
+      <div class="nav-i-container">
+        <i class="fa-solid fa-house nav-icon"></i>
+      </div>
+      <%=  link_to "Accueil", pages_home_path, class:"link" %>
     </div>
-      <%= image_tag "002-notification-1.png", alt:"icone notification" %>
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement">
+      <div class="nav-i-container">
+        <i class="fa-solid fa-handshake nav-icon"></i>
+      </div>
+      <%= link_to "Programme", fidelity_programs_path, class:"link" %>
+    </div>
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement">
+      <div class="nav-i-container">
+        <i class="fa-solid fa-circle-user nav-icon"></i>
+      </div>
+        <%= link_to "Clients", customers_path, class:"link" %>
+    </div>
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement">
+      <div class="nav-i-container">
+        <i class="fa-solid fa-shop nav-icon"></i>
+      </div>
+      <%= link_to "Établissement", etablissement_path, class:"link" %>
+    </div>
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement">
+      <div class="nav-i-container">
+        <i class="fa-solid fa-chart-simple nav-icon"></i>
+      </div>
+      <%= link_to "Performances", performances_path, class:"link" %>
+    </div>
+    <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement" >
+      <div class="nav-i-container">
+        <i class="fa-solid fa-gear nav-icon"></i>
+      </div>
+      <%= link_to "Paramètres", settings_path, class:"link" %>
+    </div>
   </div>
 </div>
-
-
-
-
-
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
