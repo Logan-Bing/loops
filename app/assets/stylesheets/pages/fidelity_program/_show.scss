@@ -104,4 +104,17 @@
   text-decoration: none;
 }
 
+#fp-status {
+  width: 10px;
+  height: 10px;
+}
 
+.fp-on {
+  background-color: #4EE400;
+  border-radius: 50%;
+}
+
+.fp-off {
+  background-color: #e40000;
+  border-radius: 50%;
+}

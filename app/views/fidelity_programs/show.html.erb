@@ -11,7 +11,16 @@
 
           <div id="fp-s-name">
             <h1><%= @fidelity_program.name.upcase %></h1>
-            <p>Active</p>
+            <div>
+            <p>Statut</p>
+            <div id="fp-status">
+            <% if @fidelity_program.active = true %>
+            <div class="fp-on"></div>
+            <% else %>
+            <div class="fp-off"></div>
+            <% end %>
+            </div>
+            </div>
           </div>
 
           <div id="fp-s-left-info">
@@ -25,7 +34,7 @@
       <div id="fp-s-qr-container">
 
         <div id="fp-s-qr-text">
-          Présenter à vos clients :
+          Présentez à vos clients :
         </div>
         <div id="fp-s-qrcode">
           <%= @svg.html_safe %>
