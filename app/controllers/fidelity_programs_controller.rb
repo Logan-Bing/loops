@@ -13,6 +13,8 @@ class FidelityProgramsController < ApplicationController
   def create
     @fidelity_program = FidelityProgram.new(set_params)
     @fidelity_program.user = current_user
+    @fidelity_program.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
+    @fidelity_program.active = true
 
     respond_to do |format|
       if params[:add_reward]
@@ -29,12 +31,12 @@ class FidelityProgramsController < ApplicationController
   end
 
   def show
-    qrcode_url = "#{request.protocol}#{request.host}#{new_user_session_path}"
+    qrcode_url = "#{request.protocol}#{request.host}#{new_user_registration_path}?id=#{params[:id]}"
     @qrcode = RQRCode::QRCode.new(qrcode_url)
     @svg = @qrcode.as_svg(
       color: "000",
       shape_rendering: "crispEdges",
-      module_size: 11,
+      module_size: 3,
       standalone: true,
       use_path: true
     )
