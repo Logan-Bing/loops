@@ -61,11 +61,11 @@
       </div>
   </div>
 
-<ul>
 
+<ul class="ul-list">
 <% @fidelity_programs.each do |program| %>
   <% program.inscriptions.each do |user| %>
-    <li>
+    <li class="user-list">
     <%= user.user.email %>
     </li>
   <% end %>
