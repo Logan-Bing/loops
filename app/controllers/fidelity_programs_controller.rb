@@ -13,6 +13,7 @@ class FidelityProgramsController < ApplicationController
   def create
     @fidelity_program = FidelityProgram.new(set_params)
     @fidelity_program.user = current_user
+    @fidelity_program.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
 
     respond_to do |format|
       if params[:add_reward]
