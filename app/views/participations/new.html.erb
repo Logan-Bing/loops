@@ -5,12 +5,12 @@
 <h5>Member ID:</h5>
 <p><%= @inscription.user.email %></p>
 
-<div id="points">
+<div id="points" data-controller="balance-check">
 <h5>Solde actuel:</h5>
 <% @inscription.participations.each do |participation| %>
 <% @sum += participation.points %>
 <% end %>
-<%= @sum %>
+<p data-balance-check-target="balance"><%= @sum %></p>
 
 <br>
 <br>
@@ -34,17 +34,19 @@
 <div style="display:none" data-toggle-participation-target="deduct">
 <%= simple_form_for [@fidelity_program, @inscription, @participation] do |f| %>
   <%= hidden_field_tag "mode", "deduct" %>
-  <%= f.input :points, label: "Points to deduct",  input_html: { min: '0', max: '100', step: '10' } %>
-  <%= f.button :submit, "Validate" %>
+  <%= f.input :points, label: "Points to deduct",  input_html: { min: '0', max: '100', step: '10', data: {
+    balance_check_target: "value",
+    action: "click->balance-check#balanceCheck"
+  } } %>
+  <%= f.button :submit, "Validate", data: {
+    balance_check_target: "button"
+  } %>
 <% end %>
+<span data-balance-check-target="message"></span>
 </div>
 </div>
 </div>
 
 <br>
 <br>
-inscription.participations.points.sum
-appeler le total des points acquis du user pour pouvoir déduire
-blocage = ne pas déduire de points si le solde est nul ou insuffisant.
 
-http://localhost:3000/fidelity_programs/12/inscriptions/1/participations/new
