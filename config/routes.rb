@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   get "/etablissement", to: "pages#etablissement", as: "etablissement"
   get "/performances", to: "pages#performances", as: "performances"
   get "/settings", to: "pages#settings", as: "settings"
+  get "/landing", to: "pages#landing", as: "landing"
 
 end
