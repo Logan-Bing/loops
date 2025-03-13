@@ -123,10 +123,11 @@ input::placeholder{
 }
 
 .reward-container{
-  margin-left: 64px;
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding-bottom: 32px;
 }
 
 .reward-text{
@@ -139,4 +140,40 @@ input::placeholder{
   font-family: $body-font;
   color: $primary-black;
   font-weight: bold;
+}
+
+.submit-container{
+  padding-bottom:32px ;
+}
+
+.submit-button{
+  background-color: $primary-color;
+  color: $button-color;
+  border-radius: $border-rounded;
+  padding: 12px 42px 12px 42px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+}
+
+.reward-button{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 32px;
+}
+
+.add-button{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: $primary-white;
+  color: $primary-color;
+  border-radius: $border-rounded;
+  padding: 12px 42px 12px 42px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: 1px solid $grey;
 }

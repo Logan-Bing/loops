@@ -1,11 +1,16 @@
 class FidelityProgramsController < ApplicationController
   before_action :find_id, only:[:edit, :show, :update, :destroy]
 
+  def nav
+    @fidelity_programs = FidelityProgram.all
+  end
+
   def index
     @fidelity_programs = FidelityProgram.all
   end
 
   def new
+    @fidelity_programs = FidelityProgram.all
     @fidelity_program = FidelityProgram.new
     @fidelity_program.rewards.build
   end
@@ -15,11 +20,17 @@ class FidelityProgramsController < ApplicationController
     @fidelity_program.user = current_user
     @fidelity_program.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
     @fidelity_program.active = true
+    
+    if params[:rewards_attributes]
+      @fidelity_program.rewards.build
+      format.html { render :new, status: :unprocessable_entity }
+    end
 
     respond_to do |format|
-      if params[:add_reward]
+      if params[:rewards_attributes]
         @fidelity_program.rewards.build
         format.html { render :new, status: :unprocessable_entity }
+        @fidelity_program.save
       else
         if @fidelity_program.save
           format.html { redirect_to @fidelity_program }
@@ -28,6 +39,7 @@ class FidelityProgramsController < ApplicationController
         end
       end
     end
+    @fidelity_program.save!
   end
 
   def show
@@ -72,4 +84,5 @@ class FidelityProgramsController < ApplicationController
   def find_id
     @fidelity_program = FidelityProgram.find(params[:id])
   end
+
 end

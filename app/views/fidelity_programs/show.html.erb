@@ -1,7 +1,7 @@
 <div id="fp-s-main-container">
   <div id="fp-s-buttons">
-    <%= link_to "Delete", fidelity_program_path(@fidelity_program), data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression du programme ?"}, class: "fp-s-delete" %>
-    <%= link_to "Edit", edit_fidelity_program_path(@fidelity_program), class: "fp-s-edit" %>
+    <%= link_to "Supprimer", fidelity_program_path(@fidelity_program), data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression du programme ?"}, class: "fp-s-delete" %>
+    <%= link_to "Editer", edit_fidelity_program_path(@fidelity_program), class: "fp-s-edit" %>
   </div>
 
   <div id="fp-s-content">
@@ -11,12 +11,25 @@
 
           <div id="fp-s-name">
             <h1><%= @fidelity_program.name.upcase %></h1>
-            <p>Active</p>
+            <div id="fp-status">
+            <p>Statut</p>
+            <div >
+            <% if @fidelity_program.active = true %>
+            <div class="fp-on"></div>
+            <% else %>
+            <div class="fp-off"></div>
+            <% end %>
+            </div>
+            </div>
           </div>
 
           <div id="fp-s-left-info">
-            <p>created at : <%= @fidelity_program.created.strftime "%d/%m/%Y" %></p>
-            <p>Point/euros ratio : 1€ = <%= @fidelity_program.points_per_euro %> points</p>
+          <div>
+            <p>Créé le : <%= @fidelity_program.created.strftime "%d/%m/%Y" %></p>
+          </div>
+          <div>
+            <p>Ratio points/euros : 1€ = <%= @fidelity_program.points_per_euro %> points</p>
+          </div>
           </div>
         </div>
       </div>
@@ -25,7 +38,7 @@
       <div id="fp-s-qr-container">
 
         <div id="fp-s-qr-text">
-          Présenter à vos clients :
+          Présentez à vos clients :
         </div>
         <div id="fp-s-qrcode">
           <%= @svg.html_safe %>
@@ -35,15 +48,22 @@
     </div>
 
     <div id="fp-s-cards">
-      <ul>
       <% @fidelity_program.rewards.each do |reward| %>
       <div id="fp-s-card">
-        <li><%= reward.name %></li>
+        <div id="fp-s-card-img">
+          image
+        </div>
+        <div id="fp-s-card-info">
+          <div>
+            <%= reward.name.upcase %>
+          </div>
+        <div id="fp-s-card-pts">
+          <%= reward.points_required %> PTS
+        </div>
+          </div>
       </div>
       <% end %>
     </div>
-
-    </ul>
 
   </div>
 </div>

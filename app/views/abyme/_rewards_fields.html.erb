@@ -13,15 +13,18 @@
 </div>
 
 <%= f.hidden_field :_destroy %>
-<%= add_associated_record(tag: :div, html: {id: "add-super-task", class: "flex"}) do %>
-  <button>
-    <i class="fas fa-plus"></i>
-    <p>Ajouter un produit</p>
-  </button>
-<% end %>
 
-<button class="delete">
-  <%= remove_associated_record(tag: :div) do %>
-    Supprimer
+<div class="reward-button">
+  <%= add_associated_record(tag: :div, html: {id: "add-super-task", class: "flex"}) do %>
+    <button class="add-button">
+      <p>Ajouter un produit</p>
+      <i class="fas fa-plus"></i>
+    </button>
   <% end %>
-</button>
+
+  <button class="delete">
+    <%= remove_associated_record(tag: :div) do %>
+      Supprimer
+    <% end %>
+  </button>
+</div>
