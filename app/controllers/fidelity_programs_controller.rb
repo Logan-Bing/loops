@@ -20,11 +20,11 @@ class FidelityProgramsController < ApplicationController
     @fidelity_program.user = current_user
     @fidelity_program.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
     @fidelity_program.active = true
-
     respond_to do |format|
       if params[:add_reward]
         @fidelity_program.rewards.build
         format.html { render :new, status: :unprocessable_entity }
+        @fidelity_program.save
       else
         if @fidelity_program.save
           format.html { redirect_to @fidelity_program }
@@ -33,6 +33,7 @@ class FidelityProgramsController < ApplicationController
         end
       end
     end
+    @fidelity_program.save!
   end
 
   def show
