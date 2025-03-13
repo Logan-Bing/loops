@@ -5,14 +5,29 @@ export default class extends Controller {
 
   static targets = ["navElement"]
 
+  connect() {
+    this.highlightSidebar()
+  }
+
   change(event){
+    const link = event.currentTarget.querySelector("a")
+    link.click();
+  }
+
+
+  highlightSidebar = () => {
     this.navElementTargets.forEach ((e) => {
+
       e.classList.remove("active")
     });
-    event.currentTarget.classList.add("active")
+
+    const path = window.location.pathname
+    this.navElementTargets.forEach ((e) => {
+      // if (e.querySelector())
+      if (e.querySelector("a").getAttribute("href") === path) {
+        e.classList.add("active")
+      }
+    });
+
   }
 }
-
-// Event.currentTarget.classList.add("active");
-
-//  <   this.navElementTarget.classList.add("active")>

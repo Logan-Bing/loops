@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px 16px 32px;
+  background-color: $primary-white;
   border-bottom: #D1D1D1 solid 1px;
 }
 
@@ -22,7 +23,8 @@
 
 .icon{
   font-size: 25px;
-  color: #74C3FF;
+  color: $second-color;
+  cursor: pointer;
 }
 
 .avatar{
