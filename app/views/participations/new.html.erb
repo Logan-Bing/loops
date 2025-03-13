@@ -5,11 +5,15 @@
 <h5>Member ID:</h5>
 <p><%= @inscription.user.email %></p>
 
+<div id="points">
 <h5>Solde actuel:</h5>
 <% @inscription.participations.each do |participation| %>
 <% @sum += participation.points %>
 <% end %>
 <%= @sum %>
+
+<br>
+<br>
 
 <div id="participation-form" data-controller="toggle-participation">
 <form>
@@ -33,6 +37,7 @@
   <%= f.input :points, label: "Points to deduct",  input_html: { min: '0', max: '100', step: '10' } %>
   <%= f.button :submit, "Validate" %>
 <% end %>
+</div>
 </div>
 </div>
 
