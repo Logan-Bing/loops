@@ -15,8 +15,8 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+  <%= hidden_field_tag :fidelity_program_id, params[:id] if params[:id].present? %>
   </div>
-  <% raise %>
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
