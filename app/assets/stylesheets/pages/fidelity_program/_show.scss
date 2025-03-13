@@ -1,0 +1,107 @@
+#fp-s-buttons {
+  margin-top: 32px;
+  gap: 16px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#fp-s-content {
+  display: flex;
+  flex-direction: column;
+  margin: 32px;
+}
+
+#fp-s-upper {
+  display: flex;
+  height: 346px;
+
+  margin-top: 32px;
+  gap: 16px;
+}
+
+#fp-s-left {
+  width: 616px;
+  height: 346px;
+  background-color: #F60853;
+  border-radius: 12px;
+}
+
+#fp-s-info {
+  width: 539px;
+  height: 145px;
+  margin-top: 16px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#fp-s-left-info {
+  width: 465;
+  height: 74;
+}
+
+#fp-s-name {
+  height: 39px;
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    font-size: 32px;
+  }
+
+  p {
+    background-color: #EFEFEF;
+    border-radius: 30px;
+    padding: 0px 8px;
+    margin: 0px;
+  }
+}
+
+#fp-s-qr-container {
+  width: 295px;
+  height: 346px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  background-color: #F60853;
+  border-radius: 12px;
+}
+
+#fp-s-qr-text {
+  margin-top: 32px;
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+}
+
+
+#fp-s-qrcode {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+#fp-s-cards {
+  margin-top: 32px;
+  gap: 16px;
+}
+
+.fp-s-edit {
+  background-color: #E7E7E7;
+  padding: 12px 42px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.fp-s-delete {
+  color: white;
+  background-color: #C31212;
+  padding: 12px 42px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+

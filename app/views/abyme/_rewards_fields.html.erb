@@ -1,14 +1,27 @@
 
-<h5>Nom du produit</h5>
-<%= f.input :name, label: false %>
-<h5>Description du produit</h5>
-<%= f.input :description, label: false %>
-<h5>Nombre de points requis</h5>
-<%= f.input :points_required, label: false %>
+<div class="input-container">
+  <p>Produit</p>
+  <%= f.input :name, label: false %>
+</div>
+<div class="input-container">
+  <p>Description</p>
+  <%= f.input :description, label: false %>
+</div>
+<div class="input-container">
+  <p>Points requis</p>
+  <%= f.input :points_required, label: false %>
+</div>
+
 <%= f.hidden_field :_destroy %>
+<%= add_associated_record(tag: :div, html: {id: "add-super-task", class: "flex"}) do %>
+  <button>
+    <i class="fas fa-plus"></i>
+    <p>Ajouter un produit</p>
+  </button>
+<% end %>
 
 <button class="delete">
-<%= remove_associated_record(tag: :div) do %>
-  <i class="fas fa-trash"></i> Supprimer
-<% end %>
+  <%= remove_associated_record(tag: :div) do %>
+    Supprimer
+  <% end %>
 </button>

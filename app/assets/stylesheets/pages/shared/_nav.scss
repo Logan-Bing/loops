@@ -5,6 +5,7 @@
   padding-left: 32px;
   padding-right: 32px;
   height: 100vh;
+  background-color: $primary-white;
 }
 
 .side-container .section{
@@ -17,6 +18,7 @@
   width: 240px;
   border-right: #D1D1D1 solid 1px;
   padding-top: 32px;
+  background-color: $primary-white;
 }
 
 .nav-icon{
@@ -35,7 +37,6 @@
 
 .active > *{
   color: $primary-color;
-  background-color: red;
 }
 
 .section{
