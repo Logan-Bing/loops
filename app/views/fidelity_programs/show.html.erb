@@ -1,18 +1,49 @@
+<div id="fp-s-main-container">
+  <div id="fp-s-buttons">
+    <%= link_to "Delete", fidelity_program_path(@fidelity_program), data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression du programme ?"}, class: "fp-s-delete" %>
+    <%= link_to "Edit", edit_fidelity_program_path(@fidelity_program), class: "fp-s-edit" %>
+  </div>
 
-<h1>FP show page</h1>
+  <div id="fp-s-content">
+    <div id="fp-s-upper">
+      <div id="fp-s-left">
+        <div id="fp-s-info">
 
-<h1><%= @fidelity_program.name %></h1>
+          <div id="fp-s-name">
+            <h1><%= @fidelity_program.name.upcase %></h1>
+            <p>Active</p>
+          </div>
 
-<h4>QR code du programme à présenter aux clients :</h4>
-<%= @svg.html_safe %>
-<%= link_to "Delete", fidelity_program_path(@fidelity_program), data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression du programme ?"} %>
-<br>
-<%= link_to "Back", fidelity_programs_path %>
+          <div id="fp-s-left-info">
+            <p>created at : <%= @fidelity_program.created.strftime "%d/%m/%Y" %></p>
+            <p>Point/euros ratio : 1€ = <%= @fidelity_program.points_per_euro %> points</p>
+          </div>
+        </div>
+      </div>
 
-<ul>
-<% @fidelity_program.rewards.each do |reward| %>
-<li><%= reward.name %></li>
 
-<% end %>
+      <div id="fp-s-qr-container">
 
-</ul>
+        <div id="fp-s-qr-text">
+          Présenter à vos clients :
+        </div>
+        <div id="fp-s-qrcode">
+          <%= @svg.html_safe %>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="fp-s-cards">
+      <ul>
+      <% @fidelity_program.rewards.each do |reward| %>
+      <div id="fp-s-card">
+        <li><%= reward.name %></li>
+      </div>
+      <% end %>
+    </div>
+
+    </ul>
+
+  </div>
+</div>
