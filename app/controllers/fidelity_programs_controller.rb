@@ -1,11 +1,16 @@
 class FidelityProgramsController < ApplicationController
   before_action :find_id, only:[:edit, :show, :update, :destroy]
 
+  def nav
+    @fidelity_programs = FidelityProgram.all
+  end
+
   def index
     @fidelity_programs = FidelityProgram.all
   end
 
   def new
+    @fidelity_programs = FidelityProgram.all
     @fidelity_program = FidelityProgram.new
     @fidelity_program.rewards.build
   end
@@ -72,4 +77,5 @@ class FidelityProgramsController < ApplicationController
   def find_id
     @fidelity_program = FidelityProgram.find(params[:id])
   end
+
 end
