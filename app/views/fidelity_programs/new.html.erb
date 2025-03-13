@@ -1,21 +1,54 @@
-<div class="container">
-  <div class="container-form">
-    <%= simple_form_for @fidelity_program do |f| %>
-      <h5>Nom du Programme de Fidélité</h5>
-      <%= f.input :name, label: false %>
-      <h5>Points par euros dépensés</h5>
-      <%= f.input :points_per_euro, label: false %>
-    </div> <!-- Fermeture de la div .container-form -->
 
-      <%= f.abyme_for(:rewards, partial: 'abyme/rewards_fields') do |abyme| %>
-        <%= abyme.records %>
-        <%= abyme.new_records %>
-        <%= add_associated_record%>
-      <% end %>
+<div class="main-form">
 
+  <div class="form-container">
+    <div class="timeline">
+      <div class="circle" id="on"></div>
+      <div class="bar"></div>
+      <div class="circle"></div>
+    </div>
+
+    <div class="form-text">
+      <h2>Programme infos</h2>
+      <p>Fill in the data for profile. It will take a couple of minutes.
+      You only need a passport</p>
+    </div>
   </div>
 
-  <div>
-    <%= f.submit 'Enregistrer le programme' %>
-  <% end %>
+  <div class="form-input">
+    <%= simple_form_for @fidelity_program do |f| %>
+      <div class="input-container first-input">
+        <p>Nom du programme</p>
+        <%= f.input :name, label: false, placeholder:" Best program ever..." %>
+      </div>
+
+      <div class="input-container">
+        <p>Ratio euro/points</p>
+          <div class="ratio-container">
+            <div class="euro-container">
+              <p>1€</p>
+            </div>
+            <i class="fa-solid fa-equals"></i>
+            <%= f.input :points_per_euro, label: false, placeholder:"  1 point"%>
+          </div>
+      </div>
+  </div>
+
+  <div class="reward-container">
+
+    <div class="reward-text" >
+      <h3>Le produit offert</h3>
+    </div>
+
+    <div>
+      <%= f.abyme_for(:rewards, partial: 'abyme/rewards_fields') do |abyme| %>
+          <%= abyme.records %>
+          <%= abyme.new_records %>
+        <% end %>
+          <%= f.submit 'Enregistrer' %>
+        <% end %>
+    </div>
+  </div>
+
+
 </div>
