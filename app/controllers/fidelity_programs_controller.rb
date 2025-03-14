@@ -63,7 +63,7 @@ class FidelityProgramsController < ApplicationController
   def update
 
     if @fidelity_program.update(set_params)
-      redirect_to fidelity_path(@fidelity_program)
+      redirect_to fidelity_program_path(@fidelity_program)
     else
       render :new,status: :unprocessable_entity
     end
