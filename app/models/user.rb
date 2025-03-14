@@ -7,6 +7,7 @@ class User < ApplicationRecord
   after_create :create_inscription, if: :is_customer?
   has_one :fidelity_program
 
+
   def create_inscription(fidelity_program)
     Inscription.create(user: self, fidelity_program: fidelity_program)
   end
