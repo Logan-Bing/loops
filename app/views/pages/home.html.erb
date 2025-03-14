@@ -31,18 +31,20 @@
   <div class="main-content">
     <div class="program-container">
       <div class="program-header">
-        <p>Programme en cours</p>
-        <div id="status-container" >
-            <p>Statut</p>
-            <div class="fp-on" id="green-round"></div>
-         </div>
+        <% if @fidelity_program.present? %>
+          <p>Programme en cours</p>
+          <div id="status-container" >
+              <p>Statut</p>
+              <div class="fp-on" id="green-round"></div>
+          </div>
+        <% end %>
       </div>
       <div class="text-program">
         <% if @fidelity_program.present? %>
           <h2><%= @fidelity_program.name %></h2>
         <% else %>
           <p>Vous n’avez pas encore créé votre programme de fidélité.</p>
-        <%= link_to 'Créer mon programme', new_fidelity_program_path %>
+        <%= link_to 'Aller sur programme', landing_path , class:"create-btn" %>
         <% end %>
         <% if @fidelity_program.present? %>
           <p> Actif depuis: <%= @fidelity_program.created %></p>
