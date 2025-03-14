@@ -15,11 +15,13 @@
   </head>
 
   <body>
-    <%= render "shared/header"%>
-    <div class="main-container">
-      <%= render "shared/navbar"%>
-      <div id="test">
-      <%= yield %>
+    <% unless devise_controller? %>
+      <%= render "shared/header"%>
+      <div class="main-container">
+        <%= render "shared/navbar"%>
+    <% end %>
+        <div id="test">
+        <%= yield %>
       </div>
     </div>
   </body>
