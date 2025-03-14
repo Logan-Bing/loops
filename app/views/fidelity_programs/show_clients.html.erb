@@ -52,7 +52,7 @@
           <% @users.each do |user| %>
               <div class="c-content">
                 <% if user.role == "customer" %>
-                <p><%= link_to "#{user.email}", fidelity_program_inscription_path(user.fidelity_program_id, user.id), class: "link-none" %></p>
+                <p><%= user.email %></p>
                 <% end %>
               </div>
           <% end %>
