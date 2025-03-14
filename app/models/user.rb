@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_create :create_inscription, if: :is_customer?
 
   def create_inscription(fidelity_program)
     Inscription.create(user: self, fidelity_program: fidelity_program)
