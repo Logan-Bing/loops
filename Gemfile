@@ -21,6 +21,7 @@ gem 'abyme'
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
 gem "rqrcode", "~> 2.0"
+gem "geocoder"
 # c fini ici les gems à nous
 
 group :development, :test do
