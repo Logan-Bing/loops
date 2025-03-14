@@ -9,6 +9,9 @@ class FidelityProgramsController < ApplicationController
     @fidelity_programs = FidelityProgram.all
   end
 
+  def landing
+  end
+
   def new
     @fidelity_programs = FidelityProgram.all
     @fidelity_program = FidelityProgram.new
@@ -20,7 +23,7 @@ class FidelityProgramsController < ApplicationController
     @fidelity_program.user = current_user
     @fidelity_program.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
     @fidelity_program.active = true
-    
+
     if params[:rewards_attributes]
       @fidelity_program.rewards.build
       format.html { render :new, status: :unprocessable_entity }
@@ -73,6 +76,8 @@ class FidelityProgramsController < ApplicationController
 
   def show_clients
     @fidelity_programs = FidelityProgram.all
+    @inscriptions = Inscription.all
+    @sum = 0
   end
 
   private
