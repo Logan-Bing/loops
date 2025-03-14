@@ -10,7 +10,11 @@
       <div class="nav-i-container">
         <i class="fa-solid fa-handshake nav-icon"></i>
       </div>
-        <%= link_to "Programme", fidelity_programs_exist? ? fidelity_program_path(current_user.fidelity_program) : landing_path, class:"link", data: {turbo: :false} %>
+      <% if current_user.fidelity_program.nil? %>
+        <%= link_to "Programme", landing_path, class:"link", data: {turbo: :false} %>
+      <% else %>
+        <%= link_to "Programme", fidelity_program_path(current_user.fidelity_program), class:"link", data: {turbo: :false} %>
+      <% end %>
     </div>
     <div class="section" data-action="click->navbutton#change" data-navbutton-target="navElement" >
       <div class="nav-i-container">
