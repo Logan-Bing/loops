@@ -9,7 +9,7 @@
 </div>
 <div class="input-container">
   <p>Points requis</p>
-  <%= f.input :points_required, label: false %>
+  <%= f.input :points_required, label: false, input_html: { min: '0', max: '100', step: '5' }, class: "haha" %>
 </div>
 
 <%= f.hidden_field :_destroy %>

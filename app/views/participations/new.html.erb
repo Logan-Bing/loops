@@ -26,7 +26,7 @@
 <div style="display:none" data-toggle-participation-target="add">
 <%= simple_form_for [@fidelity_program, @inscription, @participation] do |f| %>
   <%= hidden_field_tag "mode", "add" %>
-  <%= f.input :points, label: "Points to add", input_html: { min: '0', max: '100', step: '10' } %>
+  <%= f.input :points, label: "Points to add", input_html: { min: '0', max: '100', step: '5' } %>
   <%= f.button :submit, "Validate" %>
 <% end %>
 </div>
@@ -34,7 +34,7 @@
 <div style="display:none" data-toggle-participation-target="deduct">
 <%= simple_form_for [@fidelity_program, @inscription, @participation] do |f| %>
   <%= hidden_field_tag "mode", "deduct" %>
-  <%= f.input :points, label: "Points to deduct",  input_html: { min: '0', max: '100', step: '10', data: {
+  <%= f.input :points, label: "Points to deduct",  input_html: { min: '0', max: '100', step: '5', data: {
     balance_check_target: "value",
     action: "click->balance-check#balanceCheck"
   } } %>
@@ -49,4 +49,3 @@
 
 <br>
 <br>
-
