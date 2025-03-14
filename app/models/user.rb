@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 
   def create_inscription(fidelity_program)
-    Inscription.create(user: self, fidelity_program: fidelity_program)
+    Inscription.create(user: self, fidelity_program: fidelity_program, created: DateTime.now.strftime "%d/%m/%Y %H:%M")
   end
 
   def is_customer?
