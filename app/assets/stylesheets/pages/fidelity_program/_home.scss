@@ -119,6 +119,12 @@
   display: flex;
   align-items: center;
   border-bottom: 0.5px solid $grey;
-  gap: 8px;
+  gap: 16px;
   width: fit-content;
+  padding: 16px;
+}
+
+.shortcut-container span{
+  color: $primary-black;
+  font-weight: 500;
 }
