@@ -1,11 +1,20 @@
-<h1>FP index pages</h1>
+<div class="program-container">
+  <h1>Programmes</h1>
 
-<ul>
-<% @fidelity_programs.each do |program| %>
-<li><%= link_to "#{program.name}", fidelity_program_path(program) %></li>
-<% end %>
-</ul>
+  <div class="program-content">
+    <div>
+      <ul style="list-style-type: none">
+        <% @fidelity_programs.each do |program| %>
+        <li><%= link_to "#{program.name}", fidelity_program_path(program), class: "link" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-<%= link_to "Créer un programme", new_fidelity_program_path %>
+  <button class="btn-program">
+    <%= link_to "Créer un programme", new_fidelity_program_path, style: "text-decoration: none; color: white" %>
+  </button>
 
-<%= link_to "Back", root_path %>
+  <%= link_to "Back", root_path, class: "link" %>
+
+</div>
