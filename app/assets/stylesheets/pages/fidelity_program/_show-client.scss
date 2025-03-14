@@ -39,7 +39,7 @@
 
 #reset-filter{
   display: flex;
-  padding: 26px 25px 25px 24px;
+  padding: 26px 10px 25px 24px;
   justify-content: center;
   align-items: center;
   color: $second-color;
@@ -135,6 +135,7 @@
 
   .c-header {
   border-top-right-radius: 20px;
+
   }
 
   .c-content {
@@ -150,6 +151,7 @@
     width: 150px;
     justify-content: center;
   }
+
 }
 
 .c-content {
@@ -170,4 +172,17 @@
 
 .c-content:last-child {
   border-bottom: none;
+}
+
+.other{
+  padding: 21px 135px 21px 0;
+}
+
+.user-list{
+  list-style-type: none;
+  padding: 20px;
+}
+
+.ul-list{
+  padding: 0px 0 0 10px;
 }
