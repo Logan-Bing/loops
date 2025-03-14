@@ -8,13 +8,17 @@
 
   <div class="cards">
     <div class="card">
-      <span>Clients Inscrit</span>
-      <p>256</p>
+      <span>Clients Inscrits</span>
+      <% if @fidelity_program.present? %>
+        <p><%= @fidelity_program.inscriptions.count %></p>
+      <% else %>
+        <p>0</p>
+      <% end %>
       <span>7.3%↑ que le dernier mois</span>
     </div>
     <div class="card">
       <span>Points cumulés</span>
-      <p>1200</p>
+        <p>0</p>
       <span>7.3%↑ que le dernier mois</span>
     </div>
     <div class="card">
@@ -27,15 +31,24 @@
   <div class="main-content">
     <div class="program-container">
       <div class="program-header">
-        <p>Programme en cours</p>
-        <div id="status-container" >
-            <p>Statut</p>
-            <div class="fp-on" id="green-round"></div>
-         </div>
+        <% if @fidelity_program.present? %>
+          <p>Programme en cours</p>
+          <div id="status-container" >
+              <p>Statut</p>
+              <div class="fp-on" id="green-round"></div>
+          </div>
+        <% end %>
       </div>
       <div class="text-program">
-        <h2>my first program</h2>
-        <p> Actif depuis le: 20/08/2025</p>
+        <% if @fidelity_program.present? %>
+          <h2><%= @fidelity_program.name %></h2>
+        <% else %>
+          <p>Vous n’avez pas encore créé votre programme de fidélité.</p>
+        <%= link_to 'Aller sur programme', landing_path , class:"create-btn" %>
+        <% end %>
+        <% if @fidelity_program.present? %>
+          <p> Actif depuis: <%= @fidelity_program.created %></p>
+        <% end %>
       </div>
     </div>
     <div class="shortcuts-container">
@@ -44,12 +57,22 @@
       </div>
       <div class="fast-container">
         <div class="shortcut-container">
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user icon"></i>
           <span>Information compte</span>
           <i class="fa-solid fa-arrow-right"></i>
         </div>
         <div class="shortcut-container">
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user icon"></i>
+          <span>Information compte</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="shortcut-container">
+          <i class="fa-solid fa-user icon"></i>
+          <span>Information compte</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="shortcut-container">
+          <i class="fa-solid fa-user icon"></i>
           <span>Information compte</span>
           <i class="fa-solid fa-arrow-right"></i>
         </div>

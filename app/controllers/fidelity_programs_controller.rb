@@ -1,6 +1,7 @@
 class FidelityProgramsController < ApplicationController
   before_action :find_id, only:[:edit, :show, :update, :destroy]
 
+
   def nav
     @fidelity_programs = FidelityProgram.all
   end

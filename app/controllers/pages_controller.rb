@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @fidelity_program = current_user.fidelity_program
   end
 
   def etablissement
