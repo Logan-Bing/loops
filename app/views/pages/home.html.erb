@@ -8,13 +8,17 @@
 
   <div class="cards">
     <div class="card">
-      <span>Clients Inscrit</span>
-      <p>256</p>
+      <span>Clients Inscrits</span>
+      <% if @fidelity_program.present? %>
+        <p><%= @fidelity_program.inscriptions.count %></p>
+      <% else %>
+        <p>0</p>
+      <% end %>
       <span>7.3%↑ que le dernier mois</span>
     </div>
     <div class="card">
       <span>Points cumulés</span>
-      <p>1200</p>
+        <p>0</p>
       <span>7.3%↑ que le dernier mois</span>
     </div>
     <div class="card">
@@ -40,7 +44,9 @@
           <p>Vous n’avez pas encore créé votre programme de fidélité.</p>
         <%= link_to 'Créer mon programme', new_fidelity_program_path %>
         <% end %>
-        <p> Actif depuis le: 20/08/2025</p>
+        <% if @fidelity_program.present? %>
+          <p> Actif depuis: <%= @fidelity_program.created %></p>
+        <% end %>
       </div>
     </div>
     <div class="shortcuts-container">
