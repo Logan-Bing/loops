@@ -21,7 +21,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-left: 32px;
   padding-top: 16px;
   padding-bottom: 16px;
   border-radius: 12px;
@@ -32,7 +31,68 @@
   font-weight: 500;
 }
 
+.card > * {
+  padding-left: 32px;
+}
+
 .main-content{
   display: flex;
   align-items: center;
+  gap: 16px;
+}
+
+.program-container{
+  width: 616px;
+  height: 445px;
+  background-color: $primary-white;
+  border-radius: 12px;
+}
+
+.shortcuts-container{
+  width: 300px;
+  height: 442px;
+  background-color: $primary-white;
+  border-radius: 12px;
+}
+
+.text-program{
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.program-header{
+  padding-top: 16px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#status-container{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: $second-color;
+  width: fit-content;
+  border-radius: 50px;
+}
+
+#status-container p{
+  color: $primary-white;
+  font-weight: 500;
+  padding: 8px;
+  font-size: 12px;
+}
+
+#green-round{
+  margin-right: 8px;
+}
+
+.text-program h2{
+  color: $second-color;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
