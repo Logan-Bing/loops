@@ -1,7 +1,7 @@
 <div id="fp-s-main-container">
   <div id="fp-s-buttons">
     <%= link_to "Supprimer", fidelity_program_path(@fidelity_program), data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression du programme ?"}, class: "fp-s-delete" %>
-    <%= link_to "Editer", edit_fidelity_program_path(@fidelity_program), class: "fp-s-edit" %>
+    <%= link_to "Editer", edit_fidelity_program_path(@fidelity_program), class: "fp-s-edit", data: {turbo: :false} %>
   </div>
 
 
@@ -51,9 +51,6 @@
     <div id="fp-s-cards">
       <% @fidelity_program.rewards.each do |reward| %>
       <div id="fp-s-card">
-        <div id="fp-s-card-img">
-          image
-        </div>
         <div id="fp-s-card-info">
           <div>
             <%= reward.name.upcase %>
