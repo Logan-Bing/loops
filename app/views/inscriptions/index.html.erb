@@ -52,13 +52,14 @@
           <% @fidelity_programs.each do |program| %>
             <% program.inscriptions.each do |user| %>
               <div class="c-content">
-                <p><%= link_to "#{user.user.email}", fidelity_program_inscription_path(user.fidelity_program_id, user.id), class: "link-none" %></p>
+              <%= link_to "#{user.user.email}", fidelity_program_inscription_path(@inscription)  %>
+              <%= user.user.email %>
               </div>
             <% end %>
           <% end %>
         </div>
       </div>
-      <div id="inscription">
+      <div class="inscription">
         <div class="c-header">
           Date d'inscription
         </div>
@@ -69,27 +70,25 @@
               <% if user.created == nil %>
               <p>N/A</p>
               <% else %>
-              <p><%= user.created %></p>
+              <%= user.created %>
               <% end %>
               </div>
             <% end %>
           <% end %>
         </div>
       </div>
-      <div id="points">
+      <div class="other">
         <div class="c-header">
-          <p>Points</p>
+          Points
         </div>
         <div class="c-body">
           <% @fidelity_programs.each do |program| %>
             <% program.inscriptions.each do |i| %>
               <% i.participations.each do |p| %>
-                <p><% @sum += p.points %></p>
+                <% @sum += p.points %>
               <% end %>
                 <div class="c-content">
-                  <p>
                   <%= @sum %>
-                  </p>
                 </div>
             <% end %>
           <% end %>
@@ -97,7 +96,7 @@
       </div>
       <div id="modifier">
         <div class="c-header">
-          <p>Modifier</p>
+          Modifier
         </div>
         <div class="c-body">
           <% @fidelity_programs.each do |program| %>

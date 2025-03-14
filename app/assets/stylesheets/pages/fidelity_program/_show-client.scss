@@ -17,6 +17,7 @@
   margin-top: 24px;
   border: solid #D5D5D5;
   border-radius: 20px;
+  height: 70px;
   width: 900px;
 }
 
@@ -54,22 +55,123 @@
 }
 
 #header-user{
+
   display: flex;
+//   margin-top: 22px;
+//   background-color: $primary-color;
+//   border-top-left-radius: 20px;
+//   border-top-right-radius: 20px;
+//   color: white;
+//   font-weight: bold;
+
+}
+
+.c-header {
+  height: 61px;
   margin-top: 22px;
   background-color: $primary-color;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  justify-content: center;
-  align-items: center;
   color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#email{
-  padding: 21px 135px 21px 104px;
+.c-body {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  padding: auto;
+  background-color: white;
 }
 
-#modifier{
-  padding: 21px 135px 21px 104px;
+#email {
+  width: 300px;
+
+  .c-header {
+    border-top-left-radius: 20px;
+    justify-content: center;
+  }
+
+  .c-body {
+    justify-content: left;
+  }
+
+  .c-content {
+    width: 300px;
+  }
+
+  p {
+    padding-left: 64px;
+  }
+
+  .link-none {
+    text-decoration: none;
+    color: black;
+  }
+
+  .link-none:hover {
+    font-weight: bold;
+  }
+}
+
+#inscription {
+  width: 300px;
+  padding: auto 32px;
+
+  .c-header {
+  justify-content: center;
+  }
+
+  .c-content {
+    width: 300px;
+    justify-content: center;
+  }
+}
+
+#modifier {
+  width: 150px;
+
+  .c-header {
+  border-top-right-radius: 20px;
+
+  }
+
+  .c-content {
+    width: 150px;
+    justify-content: center;
+  }
+}
+
+#points {
+  width: 150px;
+
+  .c-content {
+    width: 150px;
+    justify-content: center;
+  }
+
+}
+
+.c-content {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom:  0.5px solid #B0B0B0;
+
+
+    i {
+      color: $second-color
+    }
+
+    i:hover {
+      size: 50%;
+    }
+}
+
+.c-content:last-child {
+  border-bottom: none;
 }
 
 .other{
