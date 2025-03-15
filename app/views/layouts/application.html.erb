@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <% unless devise_controller? %>
+    <% unless devise_controller? || current_user.role == "customer" %>
       <%= render "shared/header"%>
       <div class="main-container">
         <%= render "shared/navbar"%>
