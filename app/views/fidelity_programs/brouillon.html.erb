@@ -1,0 +1,17 @@
+<!-- Récompenses -->
+      <div class="reward-container">
+        <div class="reward-text">
+          <h3>Le produit offert</h3>
+        </div>
+        <div>
+          <%= f.abyme_for(:rewards, partial: 'abyme/rewards_fields') do |abyme| %>
+            <%= abyme.records %>
+            <%= abyme.new_records %>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Bouton d'enregistrement -->
+      <div class="submit-container">
+        <%= f.submit 'Enregistrer', class: 'submit-button' %>
+      </div>

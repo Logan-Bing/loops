@@ -12,4 +12,15 @@ class PagesController < ApplicationController
   def performances
   end
 
+  # ---------------CUSTOMER PAGES----------------------
+
+  def customers_rewards
+  end
+
+  def customers_scans
+  end
+
+  def customers_etablissement
+  end
+
 end

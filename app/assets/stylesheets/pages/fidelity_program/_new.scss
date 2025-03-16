@@ -4,10 +4,12 @@
 }
 
 body{
-  background-color: #F5F7FA;
+  background-color: $primary-white;
 }
 
 .timeline{
+  margin-left: 64px;
+  margin-top: 32px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -36,8 +38,6 @@ body{
   margin-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  background-color: $primary-white;
   border-radius: 12px;
   width: 1135px;
 }
@@ -70,10 +70,6 @@ body{
   line-height: 22px;
 }
 
-.form-input{
-  margin-left: 64px;
-}
-
 .input-container p {
   font-size: 16px;
   font-weight: 500px;
@@ -88,7 +84,7 @@ body{
 .input-container input{
   height: 48px;
   width: 488px;
-  background-color: #F8FAFC;
+  background-color: $light-blue;
   border-radius: 12px;
   border: none;
 }
@@ -128,6 +124,7 @@ input::placeholder{
 
 .reward-container{
   margin-top: 32px;
+  margin-left: 64px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -140,14 +137,16 @@ input::placeholder{
   gap: 8px;
 }
 
-.reward-text h3{
+.reward-text h2{
   font-family: $body-font;
+  font-size: 32px;
   color: $primary-black;
   font-weight: bold;
 }
 
 .submit-container{
   padding-bottom:32px ;
+  margin-left: 64px;
 }
 
 .submit-button{
@@ -201,6 +200,18 @@ input::placeholder{
   letter-spacing: 2px;
   border: none;
   cursor: pointer;
+}
+
+.next-btn{
+  text-decoration: none;
+}
+
+.btn-container{
+  margin-top: 32px;
+}
+
+.hidden{
+  display: none;
 }
 
 
