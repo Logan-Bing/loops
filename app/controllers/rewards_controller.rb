@@ -47,5 +47,4 @@ class RewardsController < ApplicationController
   def set_params
     params.require(:reward).permit(:fidelity_program_id, :name, :description, :points_required)
   end
-
 end

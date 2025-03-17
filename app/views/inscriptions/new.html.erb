@@ -1,0 +1,7 @@
+<h1>Inscription page confirmation</h1>
+
+<h2>Vous allez adhérer au programme <%= @fidelity_program.name %></h2>
+
+<% simple_form_for [@fidelity_program, @inscription] do |f| %>
+  <%= f.submit "confirmer" %>
+  <% end %>

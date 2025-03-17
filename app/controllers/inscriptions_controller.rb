@@ -1,6 +1,7 @@
 class InscriptionsController < ApplicationController
 
   def index
+    @fidelity_programs = FidelityProgram.all
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
     @inscriptions = Inscription.all
     @sum = 0
@@ -9,7 +10,6 @@ class InscriptionsController < ApplicationController
   def new
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
     @inscription = Inscription.new
-    @sum = 0
   end
 
   def create
