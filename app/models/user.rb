@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one :fidelity_program
   has_many :inscriptions
+
 end

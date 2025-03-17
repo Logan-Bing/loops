@@ -1,5 +1,6 @@
 class FidelityProgram < ApplicationRecord
   include Abyme::Model
+  
   belongs_to :user
   has_many :rewards, dependent: :destroy
   has_many :inscriptions, dependent: :destroy
