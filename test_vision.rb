@@ -6,7 +6,7 @@ require 'dotenv/load'
 vision = Google::Cloud::Vision.image_annotator
 
 # Remplacez "chemin/vers/image_de_test.jpg" par le chemin réel de l'image de test
-image_path = "ReceiptSwiss.jpg"
+image_path = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/400px-ReceiptSwiss.jpg"
 
 # Effectuez la détection de texte
 response = vision.text_detection image: image_path
@@ -18,8 +18,13 @@ else
   # Récupérez et affichez le texte détecté
   text_annotations = response.responses.first.text_annotations
   if text_annotations.any?
-    puts "Texte détecté :"
-    puts text_annotations.first.description
+    complete_text = text_annotations.first.description
+    if match = complete_text.match(/TOTAL\s*[:\-]?\s*(?:CHF\s*)?(\d+(?:[.,]\d{2})?)/i)
+      total_price = match[1].to_i
+      puts total_price
+    else
+      puts "Aucun texte correspondant à la regex n'a été trouvé."
+    end
   else
     puts "Aucun texte détecté."
   end
