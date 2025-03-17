@@ -49,12 +49,12 @@
           Email
         </div>
         <div class="c-body">
-          <% @fidelity_programs.each do |program| %>
-            <% program.inscriptions.each do |user| %>
+          <% @users.each do |user| %>
               <div class="c-content">
-                <p><%= link_to "#{user.user.email}", fidelity_program_inscription_path(user.fidelity_program_id, user.id), class: "link-none" %></p>
+                <% if user.role == "customer" %>
+                <p><%= user.email %></p>
+                <% end %>
               </div>
-            <% end %>
           <% end %>
         </div>
       </div>

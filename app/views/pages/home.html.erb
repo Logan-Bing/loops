@@ -85,5 +85,20 @@
 
 
   <% else %>
-<h1>customer view</h1>
+
+  <h1>Loops customer view</h1>
+
+  <p>à ajouter :</p>
+
+  <ul>
+    <li>total points acquis</li>
+    <li>historique des récompenses</li>
+  </ul>
+
+  <%= link_to "Mes récompenses", customers_rewards_path %>
+  <%= link_to "Mes scans", customers_scans_path %>
+  <%= link_to "Établissement", customers_etablissement_path %>
+
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+
   <% end %>
