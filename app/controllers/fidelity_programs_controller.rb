@@ -76,7 +76,7 @@ class FidelityProgramsController < ApplicationController
   end
 
   def show_clients
-    @fidelity_programs = FidelityProgram.all
+    @fidelity_program = current_user.fidelity_program
     @inscriptions = Inscription.all
     @users = User.all
     @sum = 0

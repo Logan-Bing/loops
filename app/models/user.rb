@@ -5,13 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :fidelity_program
-  
-
-  def create_inscription(fidelity_program)
-    Inscription.create(user: self, fidelity_program: fidelity_program)
-  end
-
-  def is_customer?
-    self.role == "customer"
-  end
 end
