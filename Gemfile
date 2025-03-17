@@ -24,6 +24,7 @@ gem "rqrcode", "~> 2.0"
 gem "geocoder"
 gem "google-cloud-vision"
 gem "dotenv"
+gem "cloudinary"
 # c fini ici les gems à nous
 
 

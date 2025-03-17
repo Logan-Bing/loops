@@ -1,1 +1,5 @@
 <h1>MES scans Views</h1>
+
+<p>Transaction validé +<%= @inscription.participations.last.points %></p>
+
+<%= link_to "Home", fidelity_program_inscription_path(@fidelity_program, @inscription) %>
