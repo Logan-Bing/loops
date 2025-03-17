@@ -1,1 +1,84 @@
-<h1>Rewards customer view</h1>
+<div id="rewards-header-container">
+  <div id="rewards-header">
+    <div id="reward-navbar">
+      <p id="reward-header">Mes récompenses</p>
+      <div id="around-burger">
+      <div class="burger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      </div>
+    </div>
+  <p id="reward-description">Retrouvez les prochaines récompenses qui vous attendent </p>
+  </div>
+</div>
+
+<div id="points-reward">
+  <div>
+    <div class="my-reward">
+    Mes points
+    </div>
+    <div class="my-reward">
+      <p><% @inscriptions.each do |inscription| %>
+         <% @sum += inscription.participations.sum(:points) %>
+         <% end %>
+         <%= @sum %><i class="fa-solid fa-star"></i></p>
+    </div>
+    <div class="my-reward">
+      Prochaine récompense dans 10 points
+    </div>
+  </div>
+  <div class="reward">
+    <div id="all-rewards">
+      Récompense à 30 points
+    </div>
+    <div class="reward-custom">
+      30 <i class="fa-solid fa-star"></i>
+    </div>
+    <div class="reward-details">
+      <div class="img-reward">
+        image
+      </div>
+      <div class="details">
+        Bubble tea
+        <p>Buble tea au choix voir directement sur place</p>
+      </div>
+    </div>
+    <div class="reward-details">
+      <div class="img-reward">
+        image
+      </div>
+      <div class="details">
+        Sushi
+        <p>Sushi au choix voir directement sur place</p>
+      </div>
+    </div>
+  </div>
+    <div class="reward">
+      <div id="all-rewards">
+        Récompense à 60 points
+      </div>
+      <div class="reward-custom">
+        60 <i class="fa-solid fa-star"></i>
+      </div>
+      <div class="reward-details">
+        <div class="img-reward">
+          image
+        </div>
+        <div class="details">
+          Bubble tea
+          <p>Buble tea au choix voir directement sur place</p>
+        </div>
+      </div>
+      <div class="reward-details">
+        <div class="img-reward">
+          image
+        </div>
+        <div class="details">
+          Sushi
+          <p>Sushi au choix voir directement sur place</p>
+        </div>
+      </div>
+  </div>
+</div>
