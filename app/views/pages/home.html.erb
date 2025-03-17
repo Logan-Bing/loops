@@ -88,12 +88,12 @@
 
   <h1>Loops customer view</h1>
 
-  <p>à ajouter :</p>
-
-  <ul>
-    <li>total points acquis</li>
-    <li>historique des récompenses</li>
-  </ul>
+  <p>Vos programmes de fidélité:</p>
+<ul>
+  <% @inscriptions.each do |i| %>
+    <li><%= link_to "#{i.fidelity_program.name}", fidelity_program_inscription_path(i.fidelity_program.id, i)  %></li>
+    <% end %>
+</ul>
 
   <%= link_to "Mes récompenses", customers_rewards_path %>
   <%= link_to "Mes scans", customers_scans_path %>

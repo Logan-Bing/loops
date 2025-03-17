@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :fidelity_program
+  has_many :inscriptions
 
 end

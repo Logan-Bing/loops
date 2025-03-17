@@ -1,6 +1,14 @@
 class RewardsController < ApplicationController
   before_action :find_fidelity_program, only: [:create, :update, :destroy, :edit]
 
+  def index
+    @rewards = Reward.select { |r| r.fidelity_program_id == current_user.fidelity_program.id }
+  end
+
+  def show
+    @reward = Reward.find(params[:id])
+  end
+
   def new
     @reward = Reward.new
   end
