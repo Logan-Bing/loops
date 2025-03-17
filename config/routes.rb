@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   # --------------Route Fidelty Programme-----------------
   get "/customers", to: "fidelity_programs#show_clients", as: :customers
+  get "/subscribe", to: "inscriptions#new", as: :subscribe
   get "/fidelity_programs/:fidelity_program_id/inscriptions/:id/status", to: "inscriptions#status", as: :status_profile
   get "/etablissement", to: "pages#etablissement", as: "etablissement"
   get "/validations", to: "pages#validations", as: "validations"

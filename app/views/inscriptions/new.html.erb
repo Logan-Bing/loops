@@ -1,0 +1,7 @@
+<h1>Inscription page confirmation</h1>
+
+<h2>Vous allez adhérer au programme <%= @fidelity_program.name %></h2>
+
+<%= form_tag(fidelity_program_inscriptions_path(@fidelity_program), method: :post) do %>
+  <%= submit_tag("Confirmer") %>
+<% end %>

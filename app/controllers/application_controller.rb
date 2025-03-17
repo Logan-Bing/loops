@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-
-
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
 
@@ -17,9 +15,9 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_up_path_for(resource_or_scope)
-      if (params[:fidelity_program_id] && current_user.role == "customer")
-        current_user.create_inscription(FidelityProgram.find(params[:fidelity_program_id]))
-      return "/pages/home"
-      end
+    # if (params[:fidelity_program_id] && current_user.role == "customer")
+    #   current_user.create_inscription(FidelityProgram.find(params[:fidelity_program_id]))
+    # return "/pages/home"
+    # end
   end
 end
