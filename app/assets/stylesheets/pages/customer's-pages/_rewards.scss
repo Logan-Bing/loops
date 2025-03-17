@@ -104,3 +104,18 @@
     margin: 22px 32px 32px 12px;
   }
 }
+
+#redeem-confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#r-ol {
+  transition: opacity 0.3s ease;
+}
