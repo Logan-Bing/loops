@@ -49,11 +49,9 @@
           Email
         </div>
         <div class="c-body">
-          <% @users.each do |user| %>
+          <% @fidelity_program.inscriptions.each do |i| %>
               <div class="c-content">
-                <% if user.role == "customer" %>
-                <p><%= user.email %></p>
-                <% end %>
+                <p><%= i.user.email %></p>
               </div>
           <% end %>
         </div>
@@ -63,8 +61,7 @@
           Date d'inscription
         </div>
         <div class="c-body">
-          <% @fidelity_programs.each do |program| %>
-            <% program.inscriptions.each do |user| %>
+            <% @fidelity_program.inscriptions.each do |user| %>
               <div class="c-content">
               <% if user.created == nil %>
               <p>N/A</p>
@@ -72,7 +69,6 @@
               <p><%= user.created %></p>
               <% end %>
               </div>
-            <% end %>
           <% end %>
         </div>
       </div>
@@ -81,8 +77,7 @@
           <p>Points</p>
         </div>
         <div class="c-body">
-          <% @fidelity_programs.each do |program| %>
-            <% program.inscriptions.each do |i| %>
+            <% @fidelity_program.inscriptions.each do |i| %>
               <% i.participations.each do |p| %>
                 <p><% @sum += p.points %></p>
               <% end %>
@@ -91,7 +86,6 @@
                   <%= @sum %>
                   </p>
                 </div>
-            <% end %>
           <% end %>
         </div>
       </div>
@@ -100,13 +94,11 @@
           <p>Modifier</p>
         </div>
         <div class="c-body">
-          <% @fidelity_programs.each do |program| %>
-            <% program.inscriptions.each do |user| %>
+          <% @fidelity_program.inscriptions.each do |program| %>
               <div class="c-content">
                 <i class="fa-solid fa-pen"></i>
               </div>
             <% end %>
-          <% end %>
         </div>
       </div>
   </div>
