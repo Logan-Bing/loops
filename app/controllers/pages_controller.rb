@@ -18,6 +18,8 @@ class PagesController < ApplicationController
   end
 
   def customers_scans
+    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
+    @inscription = current_user.inscriptions.find_by(fidelity_program_id: params[:fidelity_program_id]) 
   end
 
   def customers_etablissement

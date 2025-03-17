@@ -20,3 +20,10 @@
 <li><%= event.created.strftime "%d/%m/%Y" %> - <%= event.points %></li>
 <% end %>
 </ul>
+
+<%= simple_form_for [@fidelity_program, @inscription, @participation], enctype:"multipart/form-data"  do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo, as: :file %>
+  <!-- [...] -->
+  <%= f.submit %>
+<% end %>

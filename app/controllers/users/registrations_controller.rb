@@ -55,6 +55,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     if (params[:fidelity_program_id] && current_user.role == "customer")
       new_fidelity_program_inscription_path(params[:fidelity_program_id])
+    else
+      super(resource)
     end
   end
 
