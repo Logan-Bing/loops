@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="shortcut icon" href="favicon.ico">
     <title>Loops</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -13,8 +14,8 @@
   </head>
 
   <body>
-    <% unless devise_controller? || current_user.role == "customer" %>
       <%= render "shared/header"%>
+    <% unless devise_controller? || current_user.role == "customer" %>
       <div class="main-container">
         <%= render "shared/navbar"%>
     <% end %>
