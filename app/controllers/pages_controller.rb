@@ -15,6 +15,8 @@ class PagesController < ApplicationController
   # ---------------CUSTOMER PAGES----------------------
 
   def customers_rewards
+
+    @inscriptions = current_user.inscriptions
   end
 
   def customers_scans
