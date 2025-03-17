@@ -18,11 +18,13 @@
     <% unless devise_controller? || current_user.role == "customer" %>
       <div class="main-container">
         <%= render "shared/navbar"%>
-    <% end %>
         <div id="test">
         <%= yield %>
       </div>
     </div>
+    <% end %>
+
+    <%= yield %>
   </body>
 
 </html>

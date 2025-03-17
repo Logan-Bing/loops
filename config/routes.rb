@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "/landing", to: "pages#landing", as: "landing"
 
   # --------------Route Customers-----------------
+
   get "/customers_rewards", to: "pages#customers_rewards"
   get "/fidelity_programs/:fidelity_program_id/inscriptions/:id/customers_scans", to: "pages#customers_scans", as: :customers_scans
   get "/customers_etablissement", to: "pages#customers_etablissement"
@@ -31,5 +32,13 @@ Rails.application.routes.draw do
   # --------------Route Participation-----------------
 
   post "/fidelity_programs/:fidelity_program_id/inscriptions/:inscription_id/participations", to: "participations#create_photo"
+
+  get "/fidelity_programs/:fidelity_program_id/inscriptions/:id/customers_rewards", to: "pages#customers_rewards", as: :customers_rewards
+  get "/customers_scans", to: "pages#customers_scans"
+  get "/customers_etablissement", to: "pages#customers_etablissement"
+
+  # --------------Route Customers-----------------
+  post "/fidelity_programs/:fidelity_program_id/inscriptions/:inscription_id/participations", to: "participations#redeem", as: :redeem_points
+
 
 end
