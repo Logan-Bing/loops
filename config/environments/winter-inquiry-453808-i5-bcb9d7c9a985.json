@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "winter-inquiry-453808-i5",
+  "private_key_id": "bcb9d7c9a985b3f757fb0bdb9d00227e33e525f9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC3LSKQ7HIwKvMh\nDAG5v0yXhfTSRniWhQQMxoHnR9cisCmOfk63V0VbVvmfNRlliMOwTXQVeKgod1qU\nO17nntjAS0imr/OvSW8zNif5236Fi4orjzKpWwi7KM5UFbh8qI7DvwgCqCiglWsW\nyiEXxjVqJoYAgPWlP7uDr1dJdugmI1vfE+228FOBsafIUHvYBGJSL7ysjJ/TOySS\nLAIhj+8KqnGbQ+j6304w4ll1sxYUiVLiL2cHDTFDnxYsSzAbQp7InlFRvKK8n0xQ\n5mKt0+Wrw0kXGW5REKKCKHWd8iipQMuGNqaS8X3qxQ0gOvgmCVVn6vNewGStrxss\nkBJjmrX7AgMBAAECggEABNXaLb0wHnljxaGNghu8p9tPZSWbFU4Zl0S+NR6+XRoN\nXseSyGAzYn/fQwahzv5XPBYvVEnFFpxf9b3DeZXF3v2dw1ittBjaKJ3rXDshEeFn\nGlNDYRkYF+ix2aJhJllEu4IVcgyCVgrbstRPH1OKIW026Fh/I4eVKZq9USEka61D\ns/dhqCO/nByQ27e3Ywx6ptcsgadox7TR5wUJB9uBBbQfVRzlUq4utSbIWm+ySazh\nIrIJRF2jchqNGzGDsLVbinQga2o0yb7DSKLzekcXDa9amd4O+sgPidNITI8dTr43\nEW2bVTTAIdNf4DFrrli2fs1QF/2Ts5bOWJJGFHUd4QKBgQD8oohpyh3rVgCCV0Wd\nujgsgiNXkVh1BNSQIPe4dYfy7jgXAR/pXulYdHu29AfLY2WHVWb28TO9dCBQBN5o\nzlThSEAJYpmhT0E8llf736M1efELN46LVlFFUTvBK6TZYG3ypa3ah+LjI27BAhCh\noN9ocOlAFKTv6sPAm9lQcsMpuQKBgQC5ncDXwDiMTDiMr/7dtQzFvzRyAXfgW1V4\n8Tal4KHAJlb5DO/YmyVnL05wmx0gdqoJw1xrlijLvzfcry0Eh6sdH1g7kmkd2JGz\neuQ2FlGjWppDnI8zWsdOtMxtcOi0hZCU3EqIvc0ANJ32WvClR0BLJmM7iAKkPMb2\nCHvEM0EnUwKBgFgs+mPCEbND7yWPBFNK3bRbL66uoislpnMvroaJLwwRLS6KS/MO\nF2+yKEPw5I+Of68+lZN3GFH1qBmFuYLnESUYLJGaAnkUynY1GzxkD/joOMNrfqsP\nU4pYEf0YGI9uYrGgNg/iAcS5ZzyiVd+z4IX5cs/U5MSAMhaVzsGPbKKxAoGBAJrt\nFiG+mjRYBjc/Sr5ouJFxJ2gk25bTBQNeahuH49pK5fsYFjU4Qb7fWFxay7Pl98UQ\nX9qYydJN92VmfW+zgVpcaDvI154Gvo4M++A9PsTXAb1/NnNJyONjuuF6BXFvrh7h\nxABgU3RhdptCimuZjgtrrhXpTzMgW3zN1egMU8xrAoGBALwSReaK3aHJmktnypht\n54U25vd04hXlUnnPWYNFfWC0l4yXQX2AEfGLhdkrLhlmW2dKq1rw/ZAS8zN0BCI0\nWooXHMmWeJzWXD55q6bxZnxAOBx01iL/2y6gc0a3szJ3LgPrfP64NzljuOb/f/5R\npthU4bCvnAI28ruoZtDkTu+R\n-----END PRIVATE KEY-----\n",
+  "client_email": "loops-fidelity@winter-inquiry-453808-i5.iam.gserviceaccount.com",
+  "client_id": "104227200727687828236",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/loops-fidelity%40winter-inquiry-453808-i5.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

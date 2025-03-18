@@ -27,7 +27,7 @@
   }
 
   .form-signIn-container{
-    margin-top: 150px;
+    margin-top: 50px;
 
     p{
       color: #6C7278;
@@ -73,4 +73,18 @@
     height: 40px;
     width: 40vh;
   }
+
+  ////////////// SIGN UP //////////////////
+
+  .header-signup{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-signup h3{
+    color: $primary-black;
+    font-size: 14px;
+  }
+
 }
