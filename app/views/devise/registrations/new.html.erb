@@ -1,4 +1,12 @@
-<h2>Sign up</h2>
+<div id="header-signIn">
+<h2 id="logo-signIn">LOOPS</h2>
+<p>Sign up to your account</p>
+<div class="header-signup">
+  <h3>Have an account?</h3>
+  <%= render "devise/shared/links" %>
+</div>
+
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -23,5 +31,3 @@
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
