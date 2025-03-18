@@ -135,3 +135,36 @@
   color: $primary-black;
   font-weight: 500;
 }
+
+#container-customer-home{
+  position:relative;
+}
+
+#home-header{
+  background-color: #293146;
+  font-family: "Instrument Sans", sans-serif;
+  padding: 53px 0 50px 32px;
+  position:absolute;
+  width: 43vh;
+  height: 7vh;
+  p{
+    color: #DCDCDC;
+    font-size: 12px;
+  }
+}
+
+#head{
+  font-size: 20px;
+  color: white;
+}
+
+#mypoints{
+  padding-left: 32px;
+  height: 100vh;
+  position: absolute;
+  width: 402px;
+  top: 124px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: white;
+}

@@ -85,19 +85,28 @@
 
 
   <% else %>
+<div id="container-customer-home">
+  <div id="home-header">
+    <div id="head">Mes programmes</div>
 
-  <h1>Loops customer view</h1>
+    <p>Retrouvez tout vos programmes où vous êtes affiliés</p>
+  </div>
 
-  <p>Vos programmes de fidélité:</p>
-<ul>
-  <% @inscriptions.each do |i| %>
-    <li><%= link_to "#{i.fidelity_program.name}", fidelity_program_inscription_path(i.fidelity_program.id, i)  %></li>
-    <% end %>
-</ul>
+  <div id="mypoints">
 
-  <%= link_to "Mes récompenses", customers_rewards_path %>
+  <ul>
+    <% @inscriptions.each do |i| %>
+       <div >
+      <li><%= link_to "#{i.fidelity_program.name}", fidelity_program_inscription_path(i.fidelity_program.id, i)  %></li>
+       </div>
+      <% end %>
+  </ul>
+
+  <%= link_to "Mes points >", customers_rewards_path %>
   <%= link_to "Établissement", customers_etablissement_path %>
+  </div>
+</div>
 
-  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+
 
   <% end %>
