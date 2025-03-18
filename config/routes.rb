@@ -29,7 +29,5 @@ Rails.application.routes.draw do
   get "/customers_etablissement", to: "pages#customers_etablissement"
 
   # --------------Route Participations-----------------
-  post "/fidelity_programs/:fidelity_program_id/inscriptions/:inscription_id/participations", to: "participations#redeem", as: :redeem_points
-
-
+  post "/fidelity_programs/:fidelity_program_id/inscriptions/:id/customers_rewards", to: "participations#redeem", as: :redeem_points
 end

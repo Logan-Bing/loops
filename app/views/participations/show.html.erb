@@ -1,0 +1,11 @@
+<h1>Participations show</h1>
+
+<p>Nombre de points utilisés :</p> <%= @participation.points.abs %>
+
+<br>
+
+<%= @svg.html_safe %>
+
+<br>
+
+<%= link_to "Mon programme", fidelity_program_inscription_path(@fidelity_program, @inscription) %>

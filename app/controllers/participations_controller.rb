@@ -1,12 +1,22 @@
 require "google/cloud/vision"
 require 'dotenv/load'
-
+require 'date'
 
 class ParticipationsController < ApplicationController
-  require 'date'
-
-  def test
+  def show
+    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
+    @inscription = current_user.inscriptions.find_by(fidelity_program_id: params[:fidelity_program_id])
     @participation = Participation.find(params[:id])
+
+    qrcode_url = "#{request.protocol}#{request.host}#{fidelity_program_inscription_participation_path}?id=#{params[:id]}"
+    @qrcode = RQRCode::QRCode.new(qrcode_url)
+    @svg = @qrcode.as_svg(
+      color: "000",
+      shape_rendering: "crispEdges",
+      module_size: 3,
+      standalone: true,
+      use_path: true
+    )
   end
 
   def new
@@ -45,7 +55,8 @@ class ParticipationsController < ApplicationController
     @participation.points = -@participation.points
 
     if @participation.save
-      redirect_to fidelity_program_inscription_path(@fidelity_program, @inscription)
+      # redirect_to fidelity_program_inscription_path(@fidelity_program, @inscription)
+      redirect_to fidelity_program_inscription_participation_path(@fidelity_program, @inscription, @participation)
     else
       render :new, status: :unprocessable_entity
     end
