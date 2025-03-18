@@ -3,6 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 
-import HideFormController from "./controllers/hide_form.js"
-Stimulus.register("hide-button", HideFormController)
-
+// import HideFormController from "./controllers/hide_form.js"
+// Stimulus.register("hide-button", HideFormController)

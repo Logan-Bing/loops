@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/69af44d716.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="104227200727687828236">
 
     <script async src="https://ga.jspm.io/npm:es-module-shims@1.6.3/dist/es-module-shims.js"></script>
   </head>
@@ -16,15 +18,15 @@
   <body>
     <% unless devise_controller? || current_user.role == "customer" %>
       <%= render "shared/header"%>
-      <div class="main-container">
-        <%= render "shared/navbar"%>
     <% end %>
+    <div class="main-container">
+      <% unless devise_controller? || current_user.role == "customer" %>
+        <%= render "shared/navbar"%>
+      <% end %>
       <div id="test">
         <%= yield %>
       </div>
     </div>
-
-
   </body>
 
 </html>
