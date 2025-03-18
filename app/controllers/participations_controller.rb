@@ -33,6 +33,7 @@ class ParticipationsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
   def redeem
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
