@@ -1,5 +1,1 @@
-require "google/cloud/vision"
-
-vision = Google::Cloud::Vision.image_annotator do |config|
-  config.credentials = ENV["GOOGLE_APPLICATION_CREDENTIALS"]
-end
+ENV["GOOGLE_APPLICATION_CREDENTIALS"] = "#{Rails.root.join(ENV["GOOGLE_JSON"])}"
