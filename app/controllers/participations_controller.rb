@@ -1,6 +1,11 @@
 class ParticipationsController < ApplicationController
   require 'date'
 
+  def index
+    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
+    @inscription = Inscription.find_by(fidelity_program_id: params[:fidelity_program_id])
+  end
+
   def new
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
     @inscription = Inscription.find(params[:inscription_id])
@@ -8,44 +13,27 @@ class ParticipationsController < ApplicationController
     @participation = Participation.new
   end
 
-  def new_deduct
-  end
-
-  def create
-    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
-    @inscription = Inscription.find(params[:inscription_id])
-
-    @participation = Participation.new(set_params)
-    @participation.inscription_id = params[:inscription_id]
-    @participation.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
-    if params[:mode] == "deduct"
-      @participation.points = -@participation.points
-    end
-    if @participation.save
-      redirect_to status_profile_path(params[:fidelity_program_id], params[:inscription_id])
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
   def redeem
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
-    @inscription = Inscription.find(params[:inscription_id])
+    @inscription = current_user.inscriptions.find_by(fidelity_program_id: params[:fidelity_program_id])
 
-    @participation = Participation.new(set_params)
-    @participation.inscription_id = params[:inscription_id]
+    @participation = Participation.new
+    @participation.inscription_id = @inscription.id
+    @participation.points = params[:points]
     @participation.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
     @participation.points = -@participation.points
+
     if @participation.save
-      redirect_to status_profile_path(params[:fidelity_program_id], params[:inscription_id])
+      redirect_to fidelity_program_inscription_path(@fidelity_program, @inscription)
     else
       render :new, status: :unprocessable_entity
     end
+
   end
 
   private
 
   def set_params
-    params.require(:participation).permit(:fidelity_program_id, :inscription_id, :points)
+    params.require(:participation).permit(:fidelity_program_id, :inscription_id, :reward_id, :points)
   end
 end

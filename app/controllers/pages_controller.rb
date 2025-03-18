@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   def customers_rewards
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
     @inscription = current_user.inscriptions.find_by(fidelity_program_id: params[:fidelity_program_id])
-    @rewards = Reward.select(:fidelity_program_id == @fidelity_program)
+    @rewards = Reward.where(fidelity_program_id: params[:fidelity_program_id])
     @sum = 0
   end
 
