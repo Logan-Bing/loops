@@ -6,13 +6,9 @@ Rails.application.routes.draw do
   resources :fidelity_programs do
     resources :rewards
     resources :inscriptions do
-      resources :participations
+      resources :participations, except: :create
     end
   end
-
-  # resources :inscriptions do
-  #   resources :participations
-  # end
 
   # --------------Route Fidelty Programme-----------------
   get "/customers", to: "fidelity_programs#show_clients", as: :customers
@@ -35,7 +31,7 @@ Rails.application.routes.draw do
   get "/fidelity_programs/:fidelity_program_id/inscriptions/:id/customers_rewards", to: "pages#customers_rewards", as: :customers_rewards
   get "/customers_etablissement", to: "pages#customers_etablissement"
 
-  # --------------Route Customers-----------------
+  # --------------Route Participations-----------------
   post "/fidelity_programs/:fidelity_program_id/inscriptions/:inscription_id/participations", to: "participations#redeem", as: :redeem_points
 
 

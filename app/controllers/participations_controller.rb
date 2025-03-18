@@ -16,12 +16,6 @@ class ParticipationsController < ApplicationController
     @participation = Participation.new
   end
 
-
-  def new_deduct
-  end
-
-
-
   def create
     @inscription = Inscription.find(params[:inscription_id])
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
@@ -41,17 +35,18 @@ class ParticipationsController < ApplicationController
     end
   end
 
-
   def redeem
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
-    @inscription = Inscription.find(params[:inscription_id])
+    @inscription = current_user.inscriptions.find_by(fidelity_program_id: params[:fidelity_program_id])
 
-    @participation = Participation.new(set_params)
-    @participation.inscription_id = params[:inscription_id]
+    @participation = Participation.new
+    @participation.inscription_id = @inscription.id
+    @participation.points = params[:points]
     @participation.created = DateTime.now.strftime "%d/%m/%Y %H:%M"
     @participation.points = -@participation.points
+
     if @participation.save
-      redirect_to status_profile_path(params[:fidelity_program_id], params[:inscription_id])
+      redirect_to fidelity_program_inscription_path(@fidelity_program, @inscription)
     else
       render :new, status: :unprocessable_entity
     end
@@ -93,7 +88,7 @@ class ParticipationsController < ApplicationController
 
 
   def set_params
-    params.require(:participation).permit(:fidelity_program_id, :inscription_id, :points)
+    params.require(:participation).permit(:fidelity_program_id, :inscription_id, :reward_id, :points)
   end
 
   def set_photo
