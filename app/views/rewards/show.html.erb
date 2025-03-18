@@ -11,5 +11,7 @@ Utiliser mes points pour cette récompense
 <br>
 <%= form_with url: redeem_points_path(@fidelity_program, @inscription), method: :post do %>
 <%= hidden_field_tag :points, @reward.points_required %>
+<%= hidden_field_tag :fidelity_program_id, @fidelity_program.id %>
+<%= hidden_field_tag :inscription_id, @inscription.id %>
   <%= submit_tag "Confirmer" %>
 <% end %>
