@@ -146,7 +146,7 @@
   padding: 53px 0 50px 32px;
   position:absolute;
   width: 43vh;
-  height: 7vh;
+  height: 9vh;
   p{
     color: #DCDCDC;
     font-size: 12px;
@@ -163,8 +163,47 @@
   height: 100vh;
   position: absolute;
   width: 402px;
-  top: 124px;
+  top: 142px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   background-color: white;
+}
+
+.etablissement{
+  margin-top: 54px;
+  box-shadow: 0px 4px 4px #00000040;
+  border-radius: 10px;
+  font-family: "Instrument Sans", sans-serif;
+  height: 101px;
+  padding: 10px 0 0 19px;
+  margin-right: 32px;
+}
+
+.etablissement-details{
+  display: flex;
+  flex-direction: column;
+}
+
+.etablissement-name{
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.phone{
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 6px;
+}
+
+.rewards-points{
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 6px;
+  padding-top: 6px;
+}
+
+.link-my-points{
+  font-weight: 600;
+  font-size: 14px;
+  color: #0036B0;
 }

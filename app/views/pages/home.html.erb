@@ -93,20 +93,42 @@
   </div>
 
   <div id="mypoints">
+    <div class="etablissement">
+      <div class="etablissement-details">
+        <p class="etablissement-name">Isioshi</p>
+        <p class="phone">Telephone</p>
+        <div class="rewards-points">
+        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+      </div>
+    </div>
+     <div class="etablissement">
+      <div class="etablissement-details">
+        <p class="etablissement-name">Isioshi</p>
+        <p class="phone">Telephone</p>
+        <div class="rewards-points">
+        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+      </div>
+    </div>
+     <div class="etablissement">
+      <div class="etablissement-details">
+        <p class="etablissement-name">Isioshi</p>
+        <p class="phone">Telephone</p>
+        <div class="rewards-points">
+        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+      </div>
+    </div>
+     <div class="etablissement">
+      <div class="etablissement-details">
+        <p class="etablissement-name">Isioshi</p>
+        <p class="phone">Telephone</p>
+        <div class="rewards-points">
+        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+      </div>
+    </div>
 
-  <ul>
-    <% @inscriptions.each do |i| %>
-       <div >
-      <li><%= link_to "#{i.fidelity_program.name}", fidelity_program_inscription_path(i.fidelity_program.id, i)  %></li>
-       </div>
-      <% end %>
-  </ul>
-
-  <%= link_to "Mes points >", customers_rewards_path %>
-  <%= link_to "Établissement", customers_etablissement_path %>
   </div>
-</div>
-
-
-
   <% end %>
