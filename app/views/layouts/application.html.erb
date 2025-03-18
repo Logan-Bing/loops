@@ -16,15 +16,15 @@
   <body>
     <% unless devise_controller? || current_user.role == "customer" %>
       <%= render "shared/header"%>
-      <div class="main-container">
-        <%= render "shared/navbar"%>
     <% end %>
+    <div class="main-container">
+      <% unless devise_controller? || current_user.role == "customer" %>
+        <%= render "shared/navbar"%>
+      <% end %>
       <div id="test">
         <%= yield %>
       </div>
     </div>
-
-
   </body>
 
 </html>

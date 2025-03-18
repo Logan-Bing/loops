@@ -6,5 +6,5 @@ eagerLoadControllersFrom("controllers", application)
 import { AbymeController } from 'abyme';
 application.register('abyme', AbymeController);
 
-import HideFormController from "./hide_form.js"
-application.register("visibility", HideFormController)
+// import HideFormController from "./hide_form.js"
+// application.register("visibility", HideFormController)
