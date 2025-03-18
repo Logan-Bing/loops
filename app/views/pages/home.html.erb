@@ -85,16 +85,51 @@
 
 
   <% else %>
+<div id="container-customer-home">
+  <div id="home-header">
+    <div id="head">Mes programmes</div>
 
-  <h1>Loops customer view</h1>
+    <p>Retrouvez tout vos programmes où vous êtes affiliés</p>
+  </div>
 
-  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
 
-  <p>Vos programmes de fidélité:</p>
-<ul>
-  <% @inscriptions.each do |i| %>
-    <li><%= link_to "#{i.fidelity_program.name}", fidelity_program_inscription_path(i.fidelity_program.id, i)  %></li>
-    <% end %>
-</ul>
+  <div id="mypoints">
+    <div class="etablissement">
+      <div class="etablissement-details">
+        <p class="etablissement-name">Isioshi</p>
+        <p class="phone">Telephone</p>
+        <div class="rewards-points">
+        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+      </div>
+    </div>
+     <div class="etablissement">
+      <div class="etablissement-details">
+        <p class="etablissement-name">Isioshi</p>
+        <p class="phone">Telephone</p>
+        <div class="rewards-points">
+        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+      </div>
+    </div>
+     <div class="etablissement">
+      <div class="etablissement-details">
+        <p class="etablissement-name">Isioshi</p>
+        <p class="phone">Telephone</p>
+        <div class="rewards-points">
+        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+      </div>
+    </div>
+     <div class="etablissement">
+      <div class="etablissement-details">
+        <p class="etablissement-name">Isioshi</p>
+        <p class="phone">Telephone</p>
+        <div class="rewards-points">
+        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
+        </div>
+      </div>
+    </div>
 
+  </div>
   <% end %>
