@@ -1,4 +1,4 @@
-<h1>Show inscription view page</h1>
+
 
 <p>nom du programme</p>
 <%= @inscription.fidelity_program.name %>
@@ -21,9 +21,13 @@
 <% end %>
 </ul>
 
+<%= link_to "Mes programmes", root_path %>
+
 <%= simple_form_for [@fidelity_program, @inscription, @participation], enctype:"multipart/form-data"  do |f| %>
   <!-- [...] -->
-  <%= f.input :photo, as: :file %>
-  <!-- [...] -->
+  <%= f.input :photo, as: :file, input_html:{class:"hidden-input", id:"photo-upload"} %>
+  <label for="photo-upload">
+    <div class="tabler--line-scan"></div>
+  </label>
   <%= f.submit %>
 <% end %>
