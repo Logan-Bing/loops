@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :fidelity_programs do
     resources :rewards
     resources :inscriptions do
-      resources :participations, except: :create
+      resources :participations
     end
   end
 
