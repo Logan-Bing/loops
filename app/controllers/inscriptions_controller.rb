@@ -25,6 +25,7 @@ class InscriptionsController < ApplicationController
   end
 
   def show
+    @participation = Participation.new
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
     @inscription = Inscription.find(params[:id])
     @sum = 0

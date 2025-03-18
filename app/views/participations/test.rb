@@ -6,7 +6,7 @@ require 'dotenv/load'
 vision = Google::Cloud::Vision.image_annotator
 
 # Remplacez "chemin/vers/image_de_test.jpg" par le chemin réel de l'image de test
-image_path = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/400px-ReceiptSwiss.jpg"
+image_path = "https://upload.wikimedia.org/wikipedia/commons/0/0b/ReceiptSwiss.jpg"
 
 # Effectuez la détection de texte
 response = vision.text_detection image: image_path
