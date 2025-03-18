@@ -1,12 +1,16 @@
 class RewardsController < ApplicationController
-  before_action :find_fidelity_program, only: [:create, :update, :destroy, :edit]
+  before_action :find_fidelity_program, only: [:create, :update, :destroy, :edit, :show]
 
   def index
-    @rewards = Reward.select { |r| r.fidelity_program_id == current_user.fidelity_program.id }
+    @rewards = Reward.where(fidelity_program_id: params[:fidelity_program_id])
+    @inscription = Inscription.find_by(fidelity_program_id: params[:fidelity_program_id])
+    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
   end
 
   def show
     @reward = Reward.find(params[:id])
+    @inscription = current_user.inscriptions.find_by(fidelity_program_id: params[:fidelity_program_id])
+    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
   end
 
   def new
@@ -29,10 +33,6 @@ class RewardsController < ApplicationController
     redirect_to fidelity_program_path(@fidelity_program)
   end
 
-  def show
-    @reward = Reward.find(params[:id])
-  end
-
   def edit
     @reward = Reward.find(params[:id])
   end
@@ -49,7 +49,7 @@ class RewardsController < ApplicationController
   private
 
   def find_fidelity_program
-    @fidelity_program = FidelityProgram.find(params[:id])
+    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
   end
 
   def set_params
