@@ -38,7 +38,6 @@ class ParticipationsController < ApplicationController
   def redeem
     @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
     @inscription = current_user.inscriptions.find_by(fidelity_program_id: params[:fidelity_program_id])
-
     @participation = Participation.new
     @participation.inscription_id = @inscription.id
     @participation.points = params[:points]
