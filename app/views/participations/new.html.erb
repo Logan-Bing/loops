@@ -32,17 +32,22 @@
 </div>
 
 <div style="display:none" data-toggle-participation-target="deduct">
-<%= simple_form_for [@fidelity_program, @inscription, @participation] do |f| %>
-  <%= hidden_field_tag "mode", "deduct" %>
-  <%= f.input :points, label: "Points to deduct",  input_html: { min: '0', max: '100', step: '5', data: {
-    balance_check_target: "value",
-    action: "click->balance-check#balanceCheck"
-  } } %>
-  <%= f.button :submit, "Validate", data: {
-    balance_check_target: "button"
-  } %>
+ <div id="p-rewardlists">
+    <ul>
+      <% @fidelity_program.rewards.each do |r| %>
+        <% if r.points_required <= @sum %>
+          <li><%= r.name %>
+          <%= r.description %>
+          <%= r.points_required %></li>
+          <% else %>
+          <p>Vous n'avez pas encore cumulé assez de points</p>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <%= form_tag(fidelity_program_inscriptions_path(@fidelity_program), method: :post) do %>
+  <%= submit_tag("Confirmer") %>
 <% end %>
-<span data-balance-check-target="message"></span>
 </div>
 </div>
 </div>

@@ -1,1 +1,99 @@
-<h1>Rewards customer view</h1>
+<div id= "r-ol" data-controller="redeem-points" data-redeem-points-target="overlay">
+
+<div id="rewards-container">
+  <div id="rewards-header-container">
+    <div id="rewards-header">
+      <div id="reward-navbar">
+        <p id="reward-header">Mes récompenses</p>
+        <div id="around-burger">
+        <div class="burger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        </div>
+      </div>
+    <p id="reward-description">Retrouvez les prochaines récompenses qui vous attendent </p>
+    </div>
+  </div>
+
+  <div id="points-reward" >
+    <div>
+      <div class="my-reward">
+      Mes points
+      </div>
+      <div class="my-reward">
+        <p><% @inscription.participations.each do |p| %>
+            <% @sum += p.points %>
+          <% end %>
+        <p data-redeem-points-target="balance"><%= @sum %></p><i class="fa-solid fa-star"></i></p>
+      </div>
+      <div class="my-reward">
+        Prochaine récompense dans 10 points
+      </div>
+    </div>
+    <div class="reward" data-redeem-points-target="reward" data-action="click->redeem-points#createRedeem">
+      <div id="all-rewards">
+        Récompense à 30 points
+      </div>
+      <div class="reward-custom">
+        <p data-redeem-points-targets="points">30</p> <i class="fa-solid fa-star"></i>
+      </div>
+      <div class="reward-details">
+        <div class="img-reward">
+          image
+        </div>
+        <div class="details">
+          Bubble tea
+          <p>Buble tea au choix voir directement sur place</p>
+        </div>
+      </div>
+      <div class="reward-details">
+        <div class="img-reward">
+          image
+        </div>
+        <div class="details">
+          Sushi
+          <p>Sushi au choix voir directement sur place</p>
+        </div>
+      </div>
+    </div>
+      <div class="reward">
+        <div id="all-rewards">
+          Récompense à 60 points
+        </div>
+        <div class="reward-custom">
+          60 <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="reward-details">
+          <div class="img-reward">
+            image
+          </div>
+          <div class="details">
+            Bubble tea
+            <p>Buble tea au choix voir directement sur place</p>
+          </div>
+        </div>
+        <div class="reward-details">
+          <div class="img-reward">
+            image
+          </div>
+          <div class="details">
+            Sushi
+            <p>Sushi au choix voir directement sur place</p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+<div id="redeem-confirmation" data-redeem-points-target="pop" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); z-index: 1001;">
+<p>Souhaitez-vous utiliser vos points pour récupérer cette récompense?</p>
+<%= form_tag(redeem_points_path(@fidelity_program, @inscription), method: :post) do %>
+  <%= submit_tag("Confirmer") %>
+<% end %>
+<%= button_to "Annuler", data: { action: "click->redeem-points#cancelRedeem" } %>
+</div>
+
+</div>
+</div>
