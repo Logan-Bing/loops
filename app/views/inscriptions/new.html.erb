@@ -1,7 +1,15 @@
-<h1>Inscription page confirmation</h1>
+<div id="container-inscription">
 
-<h2>Vous allez adhérer au programme <%= @fidelity_program.name %></h2>
+    <div id="header-inscription">
+      <div>
+        <p>Bienvenue dans le programme de <%= @fidelity_program.name %></p>
+      </div>
+    </div>
 
-<%= form_tag(fidelity_program_inscriptions_path(@fidelity_program), method: :post) do %>
-  <%= submit_tag("Confirmer") %>
-<% end %>
+
+  <div>
+    <%= form_tag(fidelity_program_inscriptions_path(@fidelity_program), method: :post) do %>
+    <%= submit_tag("Continuer", id: "button-inscription") %>
+    <% end %>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 
 <div class="main-home">
   <div class="text-home">
-    <p>Bonsoir, <span>Lily</span></p>
+    <p>Bonsoir, <span><%= current_user.name %></span></p>
     <h1>Résumé du jour</h1>
   </div>
 
@@ -93,10 +93,13 @@
   </div>
 
 
+
   <div id="mypoints">
     <div class="etablissement">
       <div class="etablissement-details">
-        <p class="etablissement-name">Isioshi</p>
+        <p class="etablissement-name"><% current_user.inscriptions.each do |i| %>
+<%= link_to "#{i.fidelity_program.name}", fidelity_program_inscription_path(i.fidelity_program, i) %>
+<% end %></p>
         <p class="phone">Telephone</p>
         <div class="rewards-points">
         <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>

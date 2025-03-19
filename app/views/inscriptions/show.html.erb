@@ -1,27 +1,38 @@
+<div id="s-i-head">
+  <div class="container">
+    <div id="sih-link">
+    <%= link_to "Retour", root_path %>
+    </div>
 
+    <div id="sih-info">
+    <h1><%= @inscription.fidelity_program.name %></h1>
+    <p><%= @inscription.fidelity_program.user.business_name %></p>
+    </div>
+  </div>
+</div>
 
-<p>nom du programme</p>
-<%= @inscription.fidelity_program.name %>
+<div id="s-i-body" class="container">
+  <div id="sib-title">
+    <p>Mes points<p>
+  </div>
+  <div id="sib-points">
+    <div id="sib-number">
+      <% @inscription.participations.each do |participation| %>
+      <% @sum += participation.points %>
+      <% end %>
+      <%= @sum %>
+    </div>
+  </div>
+</div>
 
-<p>nombre de points</p>
-<% @inscription.participations.each do |participation| %>
-<% @sum += participation.points %>
-<% end %>
-<%= @sum %>
-
-<br>
-
-<%= link_to "Mes récompenses", customers_rewards_path %>
-
-<p>Historique des événements</p>
-
-<ul>
-<% @inscription.participations.each do |event| %>
-  <% if event.points < 0 %>
-<li><%= event.created %> - <%= event.points %> <%= link_to "Accéder au QR Code", fidelity_program_inscription_participation_path(@fidelity_program, @inscription, event.id) %></li>
-<% end %>
-<% end %>
-</ul>
+<div id="s-i-btns" class="container">
+  <div id="si-rewards">
+    <%= link_to "Mes récompenses", customers_rewards_path, class: "td-none" %>
+  </div>
+  <div id="si-history">
+    <%= link_to "Historique", history_path(@fidelity_program, @inscription), class: "td-none" %>
+  </div>
+</div>
 
 <%= link_to "Mes programmes", root_path %>
 
