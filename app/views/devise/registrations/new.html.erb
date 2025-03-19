@@ -27,7 +27,7 @@
                     input_html: { autocomplete: "new-password",class: "input-form2", placeholder: "Mot de passe" } %>
       </div>
         <p>Vous êtes ?</p>
-        <%= f.input :role, as: :check_boxes, collection: ["Client","Commerçant"],
+        <%= f.input :role, as: :check_boxes, collection: ["Commerçant","Client"],
                     required: true,
                     legend_tag: false,
                     input_html: { autocomplete: "new-password",class: "radio-inputs" } %>
