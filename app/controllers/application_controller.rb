@@ -13,11 +13,4 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
-  def after_sign_up_path_for(resource_or_scope)
-    # if (params[:fidelity_program_id] && current_user.role == "customer")
-    #   current_user.create_inscription(FidelityProgram.find(params[:fidelity_program_id]))
-    # return "/pages/home"
-    # end
-  end
 end
