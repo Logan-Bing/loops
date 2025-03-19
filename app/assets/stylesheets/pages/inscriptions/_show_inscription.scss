@@ -145,4 +145,16 @@
       color: green;
     }
   }
+
+  #loading-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  #loading-page {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 200px;
+  }
 }
