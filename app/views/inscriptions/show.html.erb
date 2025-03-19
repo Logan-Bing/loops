@@ -1,7 +1,8 @@
 <div id="s-i-head">
   <div class="container">
     <div id="sih-link">
-    <%= link_to "Retour", root_path %>
+    <i class="fa-solid fa-chevron-left"></i>
+    <%= link_to "Retour", root_path, class: "back-btn" %>
     </div>
 
     <div id="sih-info">
@@ -25,22 +26,20 @@
   </div>
 </div>
 
-<div id="s-i-btns" class="container">
+<div id="s-i-btns" class="container"  data-controller="photo-input">
   <div id="si-rewards">
     <%= link_to "Mes récompenses", customers_rewards_path, class: "td-none" %>
   </div>
   <div id="si-history">
-    <%= link_to "Historique", history_path(@fidelity_program, @inscription), class: "td-none" %>
+    <div class="upload-container" >
+  <button id="custom-upload-button" class ="btn-pics" data-photo-input-target="button" display="block" data-action="click->photo-input#addPhoto">Choisir une photo</button>
+  <%= simple_form_for [@fidelity_program, @inscription, @participation], enctype:"multipart/form-data"  do |f| %>
+    <%= f.input :photo, as: :file, label: false, input_html:{id:"photo-upload", data:{ photo_input_target: "photo"}, class: "hidden-input"} %>
+    <%= f.submit "Valider", style: "display: none", data:{ photo_input_target: "validate"} %>
+<% end %>
+</div>
+  </div>
+  <div id="file-check" style="display: none;" data-photo-input-target="check">
+  <i class="fa-solid fa-check"></i> <span id="file-name" data-photo-input-target="file"></span>
   </div>
 </div>
-
-<%= link_to "Mes programmes", root_path %>
-
-<%= simple_form_for [@fidelity_program, @inscription, @participation], enctype:"multipart/form-data"  do |f| %>
-  <!-- [...] -->
-  <%= f.input :photo, as: :file, input_html:{class:"hidden-input", id:"photo-upload"} %>
-  <label for="photo-upload">
-    <div class="tabler--line-scan"></div>
-  </label>
-  <%= f.submit %>
-<% end %>
