@@ -5,12 +5,7 @@ export default class extends Controller {
 
   static targets = ["menu"]
 
-  connect() {
-    alert("Stimulus OK ✅");
-  }
-
   toggle(){
     this.menuTarget.classList.toggle('active')
   }
 }
-
