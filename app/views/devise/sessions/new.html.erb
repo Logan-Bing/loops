@@ -8,21 +8,21 @@
   <div class="form-signIn-container">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <div id="input-with-icon1">
+      <div class="input-with-icon1">
         <i class="fas fa-envelope"></i> <!-- Icône FontAwesome -->
         <%= f.input :email,
                     label: false,
                     required: false,
                     autofocus: true,
-                    input_html: { autocomplete: "email", id: "input-form1", placeholder: "JulienDore@gmail.com" } %>
+                    input_html: { autocomplete: "email", class: "input-form1", placeholder: "JulienDore@gmail.com" } %>
       </div>
 
-      <div id="input-with-icon2">
+      <div class="input-with-icon2">
         <i class="fa-solid fa-key"></i>
             <%= f.input :password,
                         label: false,
                         required: false,
-                        input_html: { autocomplete: "current-password", id: "input-form2", placeholder: "Mot de passe"  } %>
+                        input_html: { autocomplete: "current-password", class: "input-form2", placeholder: "Mot de passe"  } %>
       </div>
         <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   </div>
@@ -38,10 +38,10 @@
   </div>
 </div>
 
-<div id="btn-signUp">
+<div class="btn-signUp">
   <p>Vous n'avez pas encore de compte?</p>
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Inscrivez-vous", new_registration_path(resource_name), id: "signUp-link" %><br />
+  <%= link_to "Inscrivez-vous", new_registration_path(resource_name), class: "signUp-link" %><br />
   <% end %></h3>
 
 </div>
