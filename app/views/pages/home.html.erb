@@ -87,16 +87,23 @@
   <% else %>
 
 
-
-<div class="programm-header">
-  <h1>Mes programmes</h1>
-</div>
-
-<% current_user.inscriptions.each do |i| %>
-  <div class="programm-container">
-    <%= link_to "#{i.fidelity_program.name}", fidelity_program_inscription_path(i.fidelity_program.id, i) %>
+<div class="main-programm">
+  <div class="programm-header">
+    <h1>Mes programmes</h1>
+    <div class="input-div">
+      <input type="text" id="search-input", placeholder="Cherchez votre programme">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
   </div>
 
-<% end %>
+
+    <% current_user.inscriptions.each do |i| %>
+      <%= link_to fidelity_program_inscription_path(i.fidelity_program.id, i), class: "programm-container" do %>
+        <%= i.fidelity_program.name %>
+      <% end %>
+    <% end %>
+
+</div>
+
 
 <% end %>
