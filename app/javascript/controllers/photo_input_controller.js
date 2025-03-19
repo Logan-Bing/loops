@@ -6,14 +6,29 @@ export default class extends Controller {
   connect() {
     console.log("hello")
     this.photoTarget.addEventListener("change", this.afficherNomFichier.bind(this));
-
-
   }
+
+  replace () {
+    document.body.innerHTML = "";
+    document.body.innerHTML = `
+    <div id="loading-container" data-photo-input-target="loading">
+      <div id="loading-page">
+        <div id="loading-text">
+          <h1>Scan en cours</h1>
+        </div>
+
+        <div id="loading-img">
+          <p>. . . . . .</p>
+        </div>
+      </div>
+    </div>
+    `;
+  }
+
   addPhoto() {
     if (this.photoTarget.files.length > 0) {
       this.validateTarget.click()
-      document.body.innerHTML = "";
-      document.body.innerHTML = "<% render 'inscriptions/loading' %>"
+      this.replace()
     } else {
       this.photoTarget.click()
     }
@@ -28,4 +43,5 @@ export default class extends Controller {
       this.fileTarget.textContent = "";
     }
   }
+
 }
