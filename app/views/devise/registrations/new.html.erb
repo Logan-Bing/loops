@@ -26,8 +26,12 @@
                     required: true,
                     input_html: { autocomplete: "new-password",class: "input-form2", placeholder: "Mot de passe" } %>
       </div>
+        <%= f.input :password_confirmation,
+                     label: false,
+                     required: true,
+                     input_html: { autocomplete: "new-password",class: "input-form" } %>
         <p>Vous êtes ?</p>
-        <%= f.input :role, as: :check_boxes, collection: ["merchant","customer"],
+        <%= f.input :role, as: :radio_buttons, collection: ["merchant","customer"],
                     required: true,
                     legend_tag: false,
                     input_html: { autocomplete: "new-password",class: "radio-inputs" } %>
