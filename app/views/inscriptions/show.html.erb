@@ -1,11 +1,9 @@
 <%= render 'shared/burger_menu' %>
 
 <div id="s-i-head">
+  <%= render 'shared/back_button' %>
+
   <div class="container">
-    <div id="sih-link">
-      <i class="fa-solid fa-chevron-left"></i>
-      <%= link_to "Retour", root_path, class: "back-btn" %>
-    </div>
 
     <div id="sih-info">
     <h1><%= @inscription.fidelity_program.name %></h1>
