@@ -2,7 +2,8 @@
 
 <div class="main-home">
   <div class="text-home">
-    <p>Bonsoir, <span><%= current_user.name %></span></p>
+    <p>Hello, <span><%= current_user.name %></span></p>
+    <br>
     <h1>Résumé du jour</h1>
   </div>
 
@@ -47,7 +48,7 @@
         <%= link_to 'Aller sur programme', landing_path , class:"create-btn" %>
         <% end %>
         <% if @fidelity_program.present? %>
-          <p> Actif depuis: <%= @fidelity_program.created %></p>
+          <p> Actif depuis: <%= @fidelity_program.created.strftime("%d-%m-%Y") %></p>
         <% end %>
       </div>
     </div>
