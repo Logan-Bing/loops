@@ -139,76 +139,75 @@
   color: $primary-black;
   font-weight: 500;
 }
+////////////// customer mes programmes /////////////
 
-#container-customer-home{
-  position:relative;
-}
+@media (min-width : 200px) and (max-width : 1100px) {
 
-#home-header{
-  background-color: #293146;
-  font-family: "Instrument Sans", sans-serif;
-  padding: 53px 0 50px 32px;
-  position:absolute;
-  width: 43vh;
-  height: 9vh;
-  p{
-    color: #DCDCDC;
-    font-size: 12px;
+  .main-programm{
+    margin-top: 64px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
+
+
+  .programm-header{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h1{
+      font-size: 32px;
+      color: $primary-black;
+      font-weight: bold;
+    }
+
+    .input-div{
+      position: relative;
+    }
+
+    input{
+      width: 100%;
+      padding-left: 60px;
+      border-radius: 36px;
+      border: 1px solid #C7BDB4;
+      height: 58px;
+      font-size: 16px;
+    }
+
+    i{
+      padding-left: 16px;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      font-size: 24px;
+      color: #4F4F4F;
+    }
+  }
+
+  .programm-container {
+    display: block; /* rend le lien cliquable sur toute la largeur */
+    text-decoration: none;
+    color: inherit;
+    padding: 10px; /* exemple */
+    border: 1px solid #ccc; /* exemple */
+    margin-bottom: 10px; /* exemple */
+    border-radius: 4px;
+  }
+
+}
+////////////// burger menu ////////////////
+
+
+.icon-burger{
+  font-size: 32px;
 }
 
-
-#head{
-  font-size: 20px;
-  color: white;
+#burger-menu{
+  display: none;
 }
 
-#mypoints{
-  padding-left: 32px;
-  height: 100vh;
-  position: absolute;
-  width: 402px;
-  top: 142px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  background-color: white;
-}
-
-.etablissement{
-  margin-top: 54px;
-  box-shadow: 0px 4px 4px #00000040;
-  border-radius: 10px;
-  font-family: "Instrument Sans", sans-serif;
-  height: 101px;
-  padding: 10px 0 0 19px;
-  margin-right: 32px;
-}
-
-.etablissement-details{
-  display: flex;
-  flex-direction: column;
-}
-
-.etablissement-name{
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.phone{
-  font-size: 14px;
-  font-weight: 600;
-  padding-top: 6px;
-}
-
-.rewards-points{
-  display: flex;
-  flex-direction: row-reverse;
-  padding-right: 6px;
-  padding-top: 6px;
-}
-
-.link-my-points{
-  font-weight: 600;
-  font-size: 14px;
-  color: #0036B0;
+#burger-menu.active{
+  display: block;
 }

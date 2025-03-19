@@ -11,6 +11,12 @@
   </div>
 </div>
 
+
+
+<%= render 'shared/burger_menu' %>
+
+
+
 <div id="s-i-body" class="container">
   <div id="sib-title">
     <p>Mes points<p>
@@ -25,6 +31,7 @@
   </div>
 </div>
 
+
 <div id="s-i-btns" class="container">
   <div id="si-rewards">
     <%= link_to "Mes récompenses", customers_rewards_path, class: "td-none" %>
@@ -34,7 +41,7 @@
   </div>
 </div>
 
-<%= link_to "Mes programmes", root_path %>
+
 
 <%= simple_form_for [@fidelity_program, @inscription, @participation], enctype:"multipart/form-data"  do |f| %>
   <!-- [...] -->
