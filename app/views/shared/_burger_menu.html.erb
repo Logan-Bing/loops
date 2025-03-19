@@ -6,12 +6,26 @@
     </div>
 
     <nav id="burger-menu" data-burger-target="menu" >
-      <ul>
-        <li><%= link_to "Mes récompenses", customers_rewards_path %></li>
-        <li><%= link_to "Mes programmes",  root_path %></li>
-        <li><%= link_to "Mon historique ", history_path(@fidelity_program, @inscription) %></li>
+      <i class="fa-solid fa-xmark close-btn" data-burger-target="close" data-action="click->burger#close" ></i>
+      <ul style="list-style-type: none">
+        <div class="links-container">
+          <div class="link-container">
+            <i class="fa-solid fa-gift icon-link"></i>
+            <li><%= link_to "Mes récompenses", customers_rewards_path,data: { action: "click->burger#close" }, class:"link-nav" %></li>
+          </div>
+          <div class="link-container">
+            <i class="fa-solid fa-book icon-link"></i>
+            <li><%= link_to "Mes programmes",  root_path,data: { action: "click->burger#close" }, class:"link-nav" %></li>
+          </div>
+          <div class="link-container">
+            <i class="fa-solid fa-clock icon-link"></i>
+            <li><%= link_to "Mon historique ", history_path(@fidelity_program, @inscription),data: { action: "click->burger#close" }, class:"link-nav" %></li>
+          </div>
+        </div>
+          <div class="logout">
+            <li><%= link_to "Se déconnecter", destroy_user_session_path, data: {action: "click->burger#close", turbo_method: :delete}, class: "dropdown-item" %></li>
+          </div>
       </ul>
-      <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
     </nav>
+   </div>
   </div>
-</div>

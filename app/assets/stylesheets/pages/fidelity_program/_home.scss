@@ -218,10 +218,56 @@
   height: 50px;
 }
 
-#burger-menu{
+#burger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.98);
   display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.icon-link{
+  font-size: 17px;
+}
+
+.close-btn{
+  font-size: 32px;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 10%;
+}
+
+.links-container{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.link-container{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link-nav{
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+  color: $primary-black;
+  font-weight: 600;
 }
 
 #burger-menu.active{
-  display: block;
+  display: flex;
+}
+
+.logout{
+  margin-top: 64px;
 }
