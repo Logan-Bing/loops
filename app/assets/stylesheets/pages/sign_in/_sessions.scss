@@ -1,12 +1,14 @@
 @media (min-width : 200px) and (max-width : 1100px) {
 
-  #header-signIn{
-    margin: 36px 0 0 32px;
-    width: 80%;
+  #all-header-signIn{
+
     h2{
       font-family: $loops-font;
-      color: #0036B0;
-      margin-bottom: 32px;
+      color: #FF850A;
+      margin-bottom: 70px;
+      font-size: 32px;
+      font-weight: 400;
+      margin-top: 167px;
     }
 
     p{
@@ -16,62 +18,124 @@
     }
   }
 
-  .signIn-container{
-    margin-top:50px;
-    background-color: #2D3850;
-    border-radius: 20px;
-    width: 100%;
-    height: 600px;
+  #header-signIn{
     display: flex;
     justify-content: center;
   }
 
-  .form-signIn-container{
-    margin-top: 50px;
+  .signIn-container{
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 32px
+  }
 
+  .form-signIn-container{
+    margin: 50px 32px 0 32px;
     p{
       color: #6C7278;
       height: 25px;
     }
   }
 
-  .input-form{
-    height: 40px;
-    width: 40vh;
-    border-radius: 10px;
-    border: 1px;
-    margin-bottom: 16px;
+  #input-with-icon1 {
+    position: relative;
   }
 
+  #input-with-icon1 i {
+    position: absolute;
+    left: 20px; /* Position de l'icône à gauche */
+    top: 37%;
+    transform: translateY(-50%);
+    color: #999;
+  }
+
+
+  #input-form1{
+    height: 50px;
+    width: 37vh;
+    border-radius: 36px;
+    border: 1px solid #C7BDB4;
+    margin-bottom: 16px;
+    text-indent: 40px;
+
+  }
+
+  #input-form2{
+    height: 50px;
+    width: 37vh;
+    border-radius: 36px;
+    border: 1px solid #C7BDB4;
+    margin-bottom: 16px;
+    text-indent: 40px;
+  }
+
+
+  #input-with-icon2 {
+    position: relative;
+  }
+
+  #input-with-icon2 i {
+    position: absolute;
+    left: 20px; /* Position de l'icône à gauche */
+    top: 37%;
+    transform: translateY(-50%);
+    color: #999;
+  }
   .mb-3.boolean.optional.user_remember_me {
     border: none;
     padding-left: 0;
   }
 
-  .checkboxes-input{
-    padding-left: 10px;
-    color: #6C7278;
-  }
-
-  #password-input{
+  #password{
     display: flex;
-
-    justify-content: space-between;
-        align-items: baseline;
+    justify-content: flex-end;
+    padding-right: 50px;
+    font-size: 12px;
   }
+
 
 
   .forgot-password-link{
-    color: #4D81E7;
+    color: #BF4215;
+    text-decoration: none;
   }
 
   .btn-logIn{
-    background-color: #0036B0;
+    background-color: #FF850A;
     color: white;
     border: 1px;
-    border-radius: 10px;
-    height: 40px;
-    width: 40vh;
+    border-radius: 36px;
+    height: 50px;
+    width: 37vh;
+    box-shadow: 0px 4px 4px #00000040;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: "Instrument Sans", sans-serif;
+  }
+
+  .form-actions{
+    margin-left: 32px;
+  }
+
+  #btn-signUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55%;
+    padding-right: 13px;
+    
+    p{
+      font-weight: 600;
+      font-size: 12px;
+    }
+  }
+
+  #signUp-link{
+    text-decoration: none;
+    color: #FF850A;
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 12px;
   }
 
   ////////////// SIGN UP //////////////////
