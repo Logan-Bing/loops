@@ -1,17 +1,17 @@
 
-<div data-controller="burger">
+<div data-controller="burger" class="burger-container">
+  <div class="burger-back">
+    <div class="burger-btn" data-action="click->burger#toggle">
+      <i class="fa-solid fa-bars icon-burger" ></i>
+    </div>
 
-  <div class="burger-btn" data-action="click->burger#toggle">
-    <i class="fa-solid fa-bars icon-burger" ></i>
+    <nav id="burger-menu" data-burger-target="menu" >
+      <ul>
+        <li><%= link_to "Mes récompenses", customers_rewards_path %></li>
+        <li><%= link_to "Mes programmes",  root_path %></li>
+        <li><%= link_to "Mon historique ", history_path(@fidelity_program, @inscription) %></li>
+      </ul>
+      <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+    </nav>
   </div>
-
-  <nav id="burger-menu" data-burger-target="menu" >
-    <ul>
-      <li><%= link_to "Mes récompenses", customers_rewards_path %></li>
-      <li><%= link_to "Mes programmes",  root_path %></li>
-      <li><%= link_to "Mon historique ", history_path(@fidelity_program, @inscription) %></li>
-    </ul>
-    <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-  </nav>
-
 </div>
