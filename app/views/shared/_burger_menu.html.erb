@@ -4,28 +4,30 @@
     <div class="burger-btn" data-action="click->burger#toggle">
       <i class="fa-solid fa-bars icon-burger" ></i>
     </div>
+      <nav id="burger-menu" data-burger-target="menu" >
 
-    <nav id="burger-menu" data-burger-target="menu" >
-      <i class="fa-solid fa-xmark close-btn" data-burger-target="close" data-action="click->burger#close" ></i>
-      <ul style="list-style-type: none">
+        <div class="close-container">
+          <i class="fa-solid fa-xmark close-btn" data-burger-target="close" data-action="click->burger#close" ></i>
+        </div>
+
         <div class="links-container">
           <div class="link-container">
             <i class="fa-solid fa-gift icon-link"></i>
-            <li><%= link_to "Mes récompenses", customers_rewards_path,data: { action: "click->burger#close" }, class:"link-nav" %></li>
+            <%= link_to "Mes récompenses", customers_rewards_path,data: { action: "click->burger#close" }, class:"link-nav" %>
           </div>
           <div class="link-container">
             <i class="fa-solid fa-book icon-link"></i>
-            <li><%= link_to "Mes programmes",  root_path,data: { action: "click->burger#close" }, class:"link-nav" %></li>
+            <%= link_to "Mes programmes",  root_path,data: { action: "click->burger#close" }, class:"link-nav" %>
           </div>
           <div class="link-container">
             <i class="fa-solid fa-clock icon-link"></i>
-            <li><%= link_to "Mon historique ", history_path(@fidelity_program, @inscription),data: { action: "click->burger#close" }, class:"link-nav" %></li>
+            <%= link_to "Mon historique ", history_path(@fidelity_program, @inscription),data: { action: "click->burger#close" }, class:"link-nav" %>
           </div>
         </div>
-          <div class="logout">
-            <li><%= link_to "Se déconnecter", destroy_user_session_path, data: {action: "click->burger#close", turbo_method: :delete}, class: "dropdown-item" %></li>
-          </div>
-      </ul>
-    </nav>
+
+      </nav>
+    <div class="logout">
+      <%= link_to "Se déconnecter", destroy_user_session_path, data: {action: "click->burger#close", turbo_method: :delete}, class: "dropdown-item" %>
+    </div>
    </div>
   </div>
