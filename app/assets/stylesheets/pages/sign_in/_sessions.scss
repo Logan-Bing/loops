@@ -5,10 +5,11 @@
     h2{
       font-family: $loops-font;
       color: #FF850A;
-      margin-bottom: 70px;
+      margin-bottom: 157px;
       font-size: 32px;
       font-weight: 400;
       margin-top: 167px;
+      margin-left: 150px;
     }
 
     p{
@@ -18,15 +19,11 @@
     }
   }
 
-  #header-signIn{
-    display: flex;
-    justify-content: center;
-  }
 
   .signIn-container{
     border-radius: 20px;
     width: 100%;
-    margin-bottom: 32px
+    margin-bottom: 57px
   }
 
   .form-signIn-container{
@@ -51,8 +48,8 @@
 
 
   #input-form1{
-    height: 50px;
-    width: 37vh;
+    height: 58px;
+    width: 329px;
     border-radius: 36px;
     border: 1px solid #C7BDB4;
     margin-bottom: 16px;
@@ -61,8 +58,8 @@
   }
 
   #input-form2{
-    height: 50px;
-    width: 37vh;
+    height: 58px;
+    width: 329px;
     border-radius: 36px;
     border: 1px solid #C7BDB4;
     margin-bottom: 16px;
@@ -87,9 +84,8 @@
   }
 
   #password{
-    display: flex;
-    justify-content: flex-end;
     padding-right: 50px;
+    margin-left: 237px;
     font-size: 12px;
   }
 
@@ -115,15 +111,15 @@
 
   .form-actions{
     margin-left: 32px;
+    margin-bottom: 157px;
   }
 
   #btn-signUp{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 55%;
     padding-right: 13px;
-    
+
     p{
       font-weight: 600;
       font-size: 12px;
