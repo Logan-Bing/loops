@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="photo-input"
 export default class extends Controller {
-  static targets = ["file", "photo", "button", "validate", "check", "loading"]
+  static targets = ["file", "photo", "button", "validate", "check", "loading", "chargement"]
   connect() {
     console.log("hello")
     this.photoTarget.addEventListener("change", this.afficherNomFichier.bind(this));
@@ -17,9 +17,7 @@ export default class extends Controller {
           <h1>Scan en cours</h1>
         </div>
 
-        <div id="loading-img">
-          <p>. . . . . .</p>
-        </div>
+        <div class="loader"></div>
       </div>
     </div>
     `;
@@ -42,6 +40,18 @@ export default class extends Controller {
     } else {
       this.fileTarget.textContent = "";
     }
+  }
+
+  demarrerChargement() {
+    this.indicateurTarget.style.display = "block"; // Afficher l'indicateur
+    // Simuler une tâche de chargement (remplacez par votre logique réelle)
+    setTimeout(() => {
+      this.arreterChargement();
+    }, 2000); // 2 secondes
+  }
+
+  arreterChargement() {
+    this.indicateurTarget.style.display = "none"; // Masquer l'indicateur
   }
 
 }
