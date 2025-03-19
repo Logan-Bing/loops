@@ -32,14 +32,28 @@
   </div>
   <div id="si-history">
     <div class="upload-container" >
-  <button id="custom-upload-button" class ="btn-pics" data-photo-input-target="button" display="block" data-action="click->photo-input#addPhoto">Choisir une photo</button>
-  <%= simple_form_for [@fidelity_program, @inscription, @participation], enctype:"multipart/form-data"  do |f| %>
-    <%= f.input :photo, as: :file, label: false, input_html:{id:"photo-upload", data:{ photo_input_target: "photo"}, class: "hidden-input"} %>
-    <%= f.submit "Valider", style: "display: none", data:{ photo_input_target: "validate"} %>
-<% end %>
-</div>
+      <button id="custom-upload-button" class ="btn-pics" data-photo-input-target="button" display="block" data-action="click->photo-input#addPhoto">Choisir une photo</button>
+      <%= simple_form_for [@fidelity_program, @inscription, @participation], enctype:"multipart/form-data"  do |f| %>
+        <%= f.input :photo, as: :file, label: false, input_html:{id:"photo-upload", data:{ photo_input_target: "photo"}, class: "hidden-input"} %>
+        <%= f.submit "Valider", style: "display: none", data:{ photo_input_target: "validate"} %>
+      <% end %>
+    </div>
   </div>
+
   <div id="file-check" style="display: none;" data-photo-input-target="check">
-  <i class="fa-solid fa-check"></i> <span id="file-name" data-photo-input-target="file"></span>
+    <i class="fa-solid fa-check"></i>
+    <span id="file-name" data-photo-input-target="file"></span>
   </div>
+
+<div id="loading-container">
+  <div id="loading-page" data-photo-input-target="loading" style="display: none;">
+    <div id="loading-text">
+      <h1>Scan en cours</h1>
+    </div>
+
+    <div id="loading-img">
+      <p>. . . . . .</p>
+    </div>
+  </div>
+</div>
 </div>

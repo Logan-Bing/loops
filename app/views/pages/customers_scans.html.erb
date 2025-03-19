@@ -3,3 +3,21 @@
 <p>Transaction validé +<%= @inscription.participations.last.points %></p>
 
 <%= link_to "Home", fidelity_program_inscription_path(@fidelity_program, @inscription) %>
+
+<div id="scan-container">
+  <div id="scan-info">
+    <div id="scan-txt">
+    <h1>Transaction validée</h1>
+    </div>
+    <div id="scan-points">
+    <h1>+<%= @inscription.participations.last.points %></h1>
+    </div>
+    <div id="scan-logo">
+    <div id="scan-img"></div>
+    </div>
+  </div>
+
+  <div id="scan-btn">
+    <%= link_to "Récupérer", fidelity_program_inscription_path(@fidelity_program, @inscription), class: "td-none" %>
+  </div>
+</div>
