@@ -2,7 +2,6 @@
   background-color: #FF850A;
   height: 100vh;
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 
@@ -12,14 +11,20 @@
   font-size: 32px;
   color: white;
   padding-left: 32px;
-  margin-top: 50%;
+  margin-top: 329px;
 }
 
 #button-inscription{
-  margin-top: 50%;
+  margin-top: 225px;
   border: 1px solid grey;
   color: #FF850A;
   border-radius: 36px;
-  padding: 17px 122px 17px 122px;
+  width: 329px;
+  height: 54px;
   box-shadow: 0px 4px 4px #00000040;
+  background-color: white;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 32px;
 }
