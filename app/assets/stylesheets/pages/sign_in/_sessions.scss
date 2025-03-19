@@ -66,6 +66,15 @@
     text-indent: 40px;
   }
 
+  .input-form3{
+    height: 58px;
+    width: 329px;
+    border-radius: 36px;
+    border: 1px solid #C7BDB4;
+    margin-bottom: 16px;
+    text-indent: 40px;
+  }
+
 
   .input-with-icon2 {
     position: relative;
@@ -144,12 +153,12 @@
     font-size: 14px;
   }
 
-  .mb-3.check_boxes.required.user_role{
+  .mb-3.radio_buttons.required.user_role{
     border: none;
     padding-left: 0;
   }
 
-  .mb-3.check_boxes.required.user_role input[type="checkbox"] {
+  .mb-3.radio_buttons.required.user_role input[type="radio"] {
     margin-right: 14px; /* Ajoute de l'espace à droite de la checkbox */
   }
 
