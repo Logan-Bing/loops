@@ -1,10 +1,6 @@
-<div id="header-signIn">
-  <h2 id="logo-signIn">LOOPS</h2>
-  <p>Sign up to your account</p>
-  <div class="header-signup">
-    <h3>Have an account?</h3>
-    <%= render "devise/shared/links" %>
-  </div>
+<div id="all-header-signIn">
+  <h2>LOOPS</h2>
+
 </div>
 
 <div class="signIn-container">
@@ -12,33 +8,40 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <p>Email</p>
+
+      <div class="input-with-icon1">
+        <i class="fas fa-envelope"></i>
         <%= f.input :email,
                     required: true,
                     label: false,
                     autofocus: true,
-                    input_html: { autocomplete: "email",class: "input-form" }%>
-        <p>Password</p>
+                    input_html: { autocomplete: "email",class: "input-form1",placeholder: "JulienDore@gmail.com" }%>
+      </div>
+
+
+      <div class="input-with-icon2">
+        <i class="fa-solid fa-key"></i>
         <%= f.input :password,
                     label: false,
                     required: true,
-                    input_html: { autocomplete: "new-password",class: "input-form" } %>
-        <p>Password Confirmation</p>
-        <%= f.input :password_confirmation,
-                    label: false,
-                    required: true,
-                    input_html: { autocomplete: "new-password",class: "input-form" } %>
+                    input_html: { autocomplete: "new-password",class: "input-form2", placeholder: "Mot de passe" } %>
+      </div>
         <p>Vous êtes ?</p>
-        <%= f.input :role, as: :radio_buttons, collection: ["merchant","customer"],
+        <%= f.input :role, as: :check_boxes, collection: ["Client","Commerçant"],
                     required: true,
                     legend_tag: false,
                     input_html: { autocomplete: "new-password",class: "radio-inputs" } %>
       <%= hidden_field_tag :fidelity_program_id, params[:id] if params[:id].present? %>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn-logIn"%>
+      <div class="btn-signup">
+        <%= f.button :submit, "Inscription", class: "btn-logIn"%>
       </div>
     <% end %>
   </div>
 </div>
+
+<div class="btn-signUp">
+    <p>Vous avez déjà un compte?</p>
+    <%- if controller_name != 'sessions' %>
+    <%= link_to "Connectez-vous", new_session_path(resource_name), class: "signUp-link" %><br />
+    <% end %>
+  </div>
