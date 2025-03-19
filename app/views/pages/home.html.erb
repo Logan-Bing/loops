@@ -100,6 +100,7 @@
     <% current_user.inscriptions.each do |i| %>
       <%= link_to fidelity_program_inscription_path(i.fidelity_program.id, i), class: "programm-container" do %>
         <%= i.fidelity_program.name %>
+        <i class="fa-solid fa-chevron-left"></i>
       <% end %>
     <% end %>
 
