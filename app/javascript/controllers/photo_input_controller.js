@@ -13,7 +13,7 @@ export default class extends Controller {
     if (this.photoTarget.files.length > 0) {
       this.validateTarget.click()
       document.body.innerHTML = "";
-      this.loadingTarget.style.display = "block"
+      document.body.innerHTML = "<%= render 'inscriptions/loading' %>"
     } else {
       this.photoTarget.click()
     }
