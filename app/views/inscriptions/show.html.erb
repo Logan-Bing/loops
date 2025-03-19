@@ -1,9 +1,9 @@
 
 
-<p>nom du programme</p>
+
 <%= @inscription.fidelity_program.name %>
 
-<p>nombre de points</p>
+<h2>Mes points</h2>
 <% @inscription.participations.each do |participation| %>
 <% @sum += participation.points %>
 <% end %>
@@ -11,12 +11,15 @@
 
 <br>
 
+<%= render 'shared/burger_menu' %>
+
+
+
 <%= link_to "Mes récompenses", customers_rewards_path %>
 
-<%= link_to "Historique", history_path(@fidelity_program, @inscription) %>
 
 
-<%= link_to "Mes programmes", root_path %>
+
 
 <%= simple_form_for [@fidelity_program, @inscription, @participation], enctype:"multipart/form-data"  do |f| %>
   <!-- [...] -->

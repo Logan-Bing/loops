@@ -85,51 +85,18 @@
 
 
   <% else %>
-<div id="container-customer-home">
-  <div id="home-header">
-    <div id="head">Mes programmes</div>
 
-    <p>Retrouvez tout vos programmes où vous êtes affiliés</p>
+
+
+<div class="programm-header">
+  <h1>Mes programmes</h1>
+</div>
+
+<% current_user.inscriptions.each do |i| %>
+  <div class="programm-container">
+    <%= link_to "#{i.fidelity_program.name}", fidelity_program_inscription_path(i.fidelity_program.id, i) %>
   </div>
 
+<% end %>
 
-  <div id="mypoints">
-    <div class="etablissement">
-      <div class="etablissement-details">
-        <p class="etablissement-name">Isioshi</p>
-        <p class="phone">Telephone</p>
-        <div class="rewards-points">
-        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
-        </div>
-      </div>
-    </div>
-     <div class="etablissement">
-      <div class="etablissement-details">
-        <p class="etablissement-name">Isioshi</p>
-        <p class="phone">Telephone</p>
-        <div class="rewards-points">
-        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
-        </div>
-      </div>
-    </div>
-     <div class="etablissement">
-      <div class="etablissement-details">
-        <p class="etablissement-name">Isioshi</p>
-        <p class="phone">Telephone</p>
-        <div class="rewards-points">
-        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
-        </div>
-      </div>
-    </div>
-     <div class="etablissement">
-      <div class="etablissement-details">
-        <p class="etablissement-name">Isioshi</p>
-        <p class="phone">Telephone</p>
-        <div class="rewards-points">
-        <p class="link-my-points">Mes points <i class="fa-solid fa-chevron-right"></i></p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <% end %>
+<% end %>
