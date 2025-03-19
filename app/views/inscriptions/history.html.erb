@@ -1,0 +1,25 @@
+<h3>Historique des événements</h3>
+
+<h4>Mes points acquis</h4>
+<ul>
+<% @inscription.participations.each do |event| %>
+<% if event.points > 0 %>
+<p>Points acquis le:</p>
+<li><%= event.created %> -
+<p>Points acquis:</p><%= event.points %></li>
+<% end %>
+<% end %>
+</ul>
+
+<h4>Mes points utilisés</h4>
+<ul>
+<% @inscription.participations.each do |event| %>
+<% if event.points < 0 %>
+<li><p>Points utilisés le:</p><%= event.created.strftime "%d-%m-%Y" %>
+<p>Points utilisés:</p><%= event.points %> |
+<%= link_to "Accéder au QR Code", fidelity_program_inscription_participation_path(@fidelity_program, @inscription, event.id) %></li>
+<% end %>
+<% end %>
+</ul>
+
+<%= link_to "Retour", :back %>

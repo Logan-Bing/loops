@@ -30,4 +30,5 @@ Rails.application.routes.draw do
 
   # --------------Route Participations-----------------
   post "/fidelity_programs/:fidelity_program_id/inscriptions/:id/customers_rewards", to: "participations#redeem", as: :redeem_points
+  get "/fidelity_programs/:fidelity_program_id/inscriptions/:id/history", to: "inscriptions#history", as: :history
 end

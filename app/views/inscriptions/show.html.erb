@@ -13,15 +13,8 @@
 
 <%= link_to "Mes récompenses", customers_rewards_path %>
 
-<p>Historique des événements</p>
+<%= link_to "Historique", history_path(@fidelity_program, @inscription) %>
 
-<ul>
-<% @inscription.participations.each do |event| %>
-  <% if event.points < 0 %>
-<li><%= event.created %> - <%= event.points %> <%= link_to "Accéder au QR Code", fidelity_program_inscription_participation_path(@fidelity_program, @inscription, event.id) %></li>
-<% end %>
-<% end %>
-</ul>
 
 <%= link_to "Mes programmes", root_path %>
 
