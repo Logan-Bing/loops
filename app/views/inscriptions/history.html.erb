@@ -5,7 +5,7 @@
     <%= render 'shared/back_button' %>
     <div class="sih-info">
       <h1>Mon historique</h1>
-      <p>Retrouvez la liste de vos points dépensé et acquis</p>
+      <p>Retrouvez la liste de vos points dépensés et acquis</p>
     </div>
   </div>
 </div>
@@ -15,11 +15,11 @@
   <div class="status-bar">
     <div class="text-s-container">
       <div class="active-container" >
-        <span data-history-target="add" data-action="click->history#secondChange" class="text-status active-text">Points reçu</span>
+        <span data-history-target="add" data-action="click->history#secondChange" class="text-status active-text">Points reçus</span>
         <div class="active-bar" data-history-target="addbar" ></div>
       </div>
       <div class="active-container" >
-        <span data-history-target="deduct" data-action="click->history#change" class="text-status" >Points utiisé</span>
+        <span data-history-target="deduct" data-action="click->history#change" class="text-status" >Points utiisés</span>
         <div data-history-target="deductbar" ></div>
       </div>
     </div>
@@ -28,14 +28,13 @@
   <div class="add-container" data-history-target="addmain">
     <% @inscription.participations.each do |event| %>
     <% if event.points > 0 %>
-    <%= link_to fidelity_program_inscription_participation_path(@fidelity_program, @inscription, event.id),class:"transaction" do %>
-      <%= image_tag 'QRCode.svg', alt:"image de qrcode" %>
+    <div class="transaction">
       <span class="date-value"><%= event.created.strftime "%d-%m-%Y" %></span>
       <div class="point-div">
         <span class="pt-add"><%= event.points %></span>
         <span class="mdi--star-four-points-circle" id="icon-add"></span>
       </div>
-    <% end %>
+    </div>
     <% end %>
     <% end %>
   </div>
@@ -44,6 +43,7 @@
     <% @inscription.participations.each do |event| %>
     <% if event.points < 0 %>
     <%= link_to fidelity_program_inscription_participation_path(@fidelity_program, @inscription, event.id),class:"transaction" do %>
+      <%= image_tag 'QRCode.svg', alt:"image de qrcode" %>
       <span class="date-value"><%= event.created.strftime "%d-%m-%Y" %></span>
       <div class="point-div">
         <span class="pt-value"><%= event.points %></span>
