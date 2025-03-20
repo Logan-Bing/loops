@@ -1,19 +1,47 @@
 <%= render 'shared/burger_menu' %>
 
-<h1>Rewards show view page</h1>
+<div class="s-i-head">
+  <div class="container">
+    <div class="sih-link">
+    <i class="fa-solid fa-chevron-left"></i>
+    <%= link_to "Retour", root_path, class: "back-btn" %>
+    </div>
 
-<%= @reward.name %> <br>
-<%= @reward.description %> <br>
-<%= @reward.points_required %>
+    <div class="sih-info">
+    <h1>Récupérez votre récompense</h1>
+    </div>
+  </div>
+</div>
 
-<br>
+<div id="rs-body" class="container">
+  <div id="rs-title">
+    <div id="rs-name">
+      <p><%= @reward.name %></p>
+    </div>
+    <div id="rs-description">
+      <p><%= @reward.description %></p>
+    </div>
+  </div>
+  <div id="rs-center">
+    <div id="rs-logo">
+      <div id="rs-img">
+      </div>
+    </div>
 
-Utiliser mes points pour cette récompense
+    <div id="rs-points">
+    <div>
+    <p><%= @reward.points_required %></p>
+    </div>
+    <div><span class="mdi--star-four-points-circle"></span></div>
+    </div>
+  </div>
 
-<br>
-<%= form_with url: redeem_points_path(@fidelity_program, @inscription), method: :post do %>
-<%= hidden_field_tag :points, @reward.points_required %>
-<%= hidden_field_tag :fidelity_program_id, @fidelity_program.id %>
-<%= hidden_field_tag :inscription_id, @inscription.id %>
-  <%= submit_tag "Confirmer" %>
-<% end %>
+  <div id="rs-foot">
+    <%= form_with url: redeem_points_path(@fidelity_program, @inscription), method: :post do %>
+      <%= hidden_field_tag :points, @reward.points_required %>
+      <%= hidden_field_tag :fidelity_program_id, @fidelity_program.id %>
+      <%= hidden_field_tag :inscription_id, @inscription.id %>
+      <%= submit_tag "Récupérer", class: "td-none", id: "rs-btn" %>
+    <% end %>
+  </div>
+</div>

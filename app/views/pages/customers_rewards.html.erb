@@ -1,40 +1,54 @@
 <%= render 'shared/burger_menu' %>
 
-  <div id="points-reward" >
-    <div>
-      <div class="my-reward">
-      Mes points
-      </div>
-      <div class="my-reward">
-        <p><% @inscription.participations.each do |p| %>
-            <% @sum += p.points %>
-          <% end %>
-        <p data-redeem-points-target="balance"><%= @sum %></p><i class="fa-solid fa-star"></i></p>
-      </div>
-      <div class="my-reward">
-        Prochaine récompense dans 10 points
-      </div>
-
-
+<div class="s-i-head">
+  <div class="container">
+    <div class="sih-link">
+    <i class="fa-solid fa-chevron-left"></i>
+    <%= link_to "Retour", root_path, class: "back-btn" %>
     </div>
+
+    <div class="sih-info">
+    <h1>Mes récompenses</h1>
+    <p>Retrouvez la liste des récompenses proposées par le programme</p>
+    </div>
+  </div>
+</div>
+
+<div id="points-reward" >
+
+  <div id="reward-container">
+
+    <div id="rc-title">
+      <p>Mes points</p>
+    </div>
+    <div id="rc-sum">
+      <% @inscription.participations.each do |p| %>
+        <% @sum += p.points %>
+      <% end %>
+      <p data-redeem-points-target="balance"><%= @sum %>
+      <span class="mdi--star-four-points-circle"></span></p>
+    </div>
+
+  </div>
+
+  <div id="reward-cards">
     <% @rewards.each do |r| %>
-    <div class="reward" >
-      <div id="all-rewards">
-        Récompense à 30 points
+    <div class="reward-card" >
+      <div class="reward-img">
       </div>
-      <div class="reward-custom">
-        <p><%= r.points_required %></p><i class="fa-solid fa-star"></i>
-      </div>
-      <div class="reward-details">
-        <div class="img-reward">
-          image
+      <div class="reward-info">
+        <div class="ri-name">
+          <p><%= link_to "#{r.name}", fidelity_program_reward_path(@fidelity_program, r), class: "td-none" %></p>
         </div>
-        <div class="details">
-          <p><%= link_to "#{r.name}", fidelity_program_reward_path(@fidelity_program, r) %></p>
+        <div class="ri-description">
           <p><%= r.description %></p>
         </div>
       </div>
-      <% end %>
-
-</div>
+      <div class="reward-points">
+        <p><%= r.points_required %></p>
+        <span class="mdi--star-four-points-circle">
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
