@@ -1,27 +1,57 @@
+<%= render 'shared/back_button' %>
 <%= render 'shared/burger_menu' %>
 
-<h3>Historique des événements</h3>
+<div class="s-i-head">
+  <div class="container">
+    <div class="sih-info">
+      <h1>Mon historique</h1>
+      <p>Retrouvez la liste de vos points dépensé et acquis</p>
+    </div>
+  </div>
+</div>
 
-<h4>Mes points acquis</h4>
-<ul>
-<% @inscription.participations.each do |event| %>
-<% if event.points > 0 %>
-<p>Points acquis le:</p>
-<li><%= event.created %> -
-<p>Points acquis:</p><%= event.points %></li>
-<% end %>
-<% end %>
-</ul>
+<div class="main-history" data-controller="history">
 
-<h4>Mes points utilisés</h4>
-<ul>
-<% @inscription.participations.each do |event| %>
-<% if event.points < 0 %>
-<li><p>Points utilisés le:</p><%= event.created.strftime "%d-%m-%Y" %>
-<p>Points utilisés:</p><%= event.points %> |
-<%= link_to "Accéder au QR Code", fidelity_program_inscription_participation_path(@fidelity_program, @inscription, event.id) %></li>
-<% end %>
-<% end %>
-</ul>
+  <div class="status-bar">
+    <div class="text-s-container">
+      <div class="active-container" >
+        <span data-history-target="add" data-action="click->history#secondChange" class="text-status active-text">Points reçu</span>
+        <div class="active-bar" data-history-target="addbar" ></div>
+      </div>
+      <div class="active-container" >
+        <span data-history-target="deduct" data-action="click->history#change" class="text-status" >Points utiisé</span>
+        <div data-history-target="deductbar" ></div>
+      </div>
+    </div>
+  </div>
 
-<%= link_to "Retour", :back %>
+  <div class="add-container" data-history-target="addmain">
+    <% @inscription.participations.each do |event| %>
+    <% if event.points > 0 %>
+    <%= link_to fidelity_program_inscription_participation_path(@fidelity_program, @inscription, event.id),class:"transaction" do %>
+      <%= image_tag 'QRCode.svg', alt:"image de qrcode" %>
+      <span class="date-value"><%= event.created.strftime "%d-%m-%Y" %></span>
+      <div class="point-div">
+        <span class="pt-add"><%= event.points %></span>
+        <span class="mdi--star-four-points-circle" id="icon-add"></span>
+      </div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="deduct-container hidden-main" data-history-target="deductmain">
+    <% @inscription.participations.each do |event| %>
+    <% if event.points < 0 %>
+    <%= link_to fidelity_program_inscription_participation_path(@fidelity_program, @inscription, event.id),class:"transaction" do %>
+      <span class="date-value"><%= event.created.strftime "%d-%m-%Y" %></span>
+      <div class="point-div">
+        <span class="pt-value"><%= event.points %></span>
+        <span class="mdi--star-four-points-circle" id="icon-pt"></span>
+      </div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+
+</div>
