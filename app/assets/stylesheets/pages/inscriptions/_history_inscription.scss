@@ -1,0 +1,119 @@
+
+.main-history{
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.status-bar{
+  margin-top: 32px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  min-height: 54px;
+  height: 54px;
+  color: #B0B0B0;
+  box-shadow: 0px 8px 28px -6px rgba($color: #18274B, $alpha: 12.0);
+  border-radius: 12px 12px 12px 12px;
+}
+
+.text-s-container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.active-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.active-bar{
+  position: absolute;
+  width: 96%;
+  background-color: $primary-color;
+  height: 3px;
+  border-radius: 12px;
+  bottom: 0;
+  right: 0;
+}
+
+#left-bar{
+  left: 0;
+}
+
+.text-status{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 30%;
+}
+
+.active-text{
+  color: $primary-color;
+}
+
+.transaction{
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #FFFFFF;
+  border: 1px solid #D1D1D1;
+  border-radius: 12px;
+  padding: 20px 0px 20px 0px;
+  text-decoration: none;
+}
+
+#icon-pt{
+  background: #FA3939;
+  width: 17px;
+}
+
+.pt-value{
+  color: #FA3939;
+  font-family: $body-font;
+  font-weight: bold;
+}
+
+#icon-add{
+  background: #4EE400;
+  width: 17px;
+}
+
+.pt-add{
+  color: #4EE400;
+  font-family: $body-font;
+  font-weight: bold;
+}
+
+
+.date-value{
+  font-family: $body-font;
+  color: $primary-black;
+}
+
+.point-div{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hidden-main {
+  display: none !important;
+}
+
+.deduct-container{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-container{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

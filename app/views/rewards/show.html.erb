@@ -39,6 +39,7 @@
   <div id="rs-foot">
     <%= form_with url: redeem_points_path(@fidelity_program, @inscription), method: :post do %>
       <%= hidden_field_tag :points, @reward.points_required %>
+      <%= hidden_field_tag :name, @reward.name %>
       <%= hidden_field_tag :fidelity_program_id, @fidelity_program.id %>
       <%= hidden_field_tag :inscription_id, @inscription.id %>
       <%= submit_tag "Récupérer", class: "td-none", id: "rs-btn" %>
