@@ -31,14 +31,14 @@
 
   </div>
 
-  <div id="reward-cards">
+  <div id="reward-cards" data-controller="reward-card">
     <% @rewards.each do |r| %>
-    <div class="reward-card" >
+    <div class="reward-card" data-action="click->reward-card#cardClick" >
       <div class="reward-img">
       </div>
       <div class="reward-info">
         <div class="ri-name">
-          <p><%= link_to "#{r.name}", fidelity_program_reward_path(@fidelity_program, r), class: "td-none" %></p>
+          <p><%= link_to "#{r.name}", fidelity_program_reward_path(@fidelity_program, r), class: "td-none", data: { reward_card_target: "link" } %></p>
         </div>
         <div class="ri-description">
           <p><%= r.description %></p>
