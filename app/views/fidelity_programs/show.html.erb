@@ -25,16 +25,14 @@
           </div>
 
           <div id="fp-s-left-info">
-          <div>
-
-          <% if @fidelity_program.created == nil %>
-            <p>N/A</p>
-            <% else %>
-            <p>Créé le : <%= @fidelity_program.created.strftime "%d/%m/%Y" %></p>
-            <% end %>
-
+          <div id="fpsli-date">
+            <% if @fidelity_program.created == nil %>
+              <p>N/A</p>
+              <% else %>
+              <p>Créé le : <%= @fidelity_program.created.strftime "%d/%m/%Y" %></p>
+              <% end %>
           </div>
-          <div>
+          <div id="fpsli-ratio">
             <p>Ratio points/euros : 1€ = <%= @fidelity_program.points_per_euro %> points</p>
           </div>
           </div>

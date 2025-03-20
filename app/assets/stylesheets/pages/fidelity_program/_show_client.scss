@@ -55,15 +55,8 @@
 }
 
 #header-user{
-
   display: flex;
-//   margin-top: 22px;
-//   background-color: $primary-color;
-//   border-top-left-radius: 20px;
-//   border-top-right-radius: 20px;
-//   color: white;
-//   font-weight: bold;
-
+  margin-top: 64px;
 }
 
 .c-header {
@@ -130,22 +123,12 @@
   }
 }
 
-#modifier {
+#points {
   width: 150px;
 
   .c-header {
-  border-top-right-radius: 20px;
-
-  }
-
-  .c-content {
-    width: 150px;
-    justify-content: center;
-  }
-}
-
-#points {
-  width: 150px;
+    border-top-right-radius: 20px;
+    }
 
   .c-content {
     width: 150px;
