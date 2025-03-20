@@ -49,7 +49,7 @@
       <div id="fp-s-card">
         <div id="fp-s-icon">
           <div class="image-wrapper">
-            <%= image_tag reward.name == "boisson" ? "boisson.png" : "sushi2.png" %>
+            <%= image_tag reward.name.downcase == "boisson" ? "boisson.png" : "sushi2.png" %>
           </div>
         </div>
         <div id="fp-s-card-info">

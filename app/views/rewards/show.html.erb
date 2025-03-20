@@ -26,7 +26,7 @@
     <div id="rs-logo">
       <div class="ri-reward-img">
         <div class="ri-image-wrapper">
-            <%= image_tag @reward.name == "boisson" ? "boisson.png" : "sushi2.png" %>
+            <%= image_tag @reward.name.downcase == "boisson" ? "boisson.png" : "sushi2.png" %>
           </div>
       </div>
     </div>

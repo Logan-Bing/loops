@@ -36,7 +36,7 @@
     <div class="reward-card" data-action="click->reward-card#cardClick" >
       <div class="ri-reward-img">
         <div class="ri-image-wrapper">
-            <%= image_tag r.name == "boisson" ? "boisson.png" : "sushi2.png" %>
+            <%= image_tag r.name.downcase == "boisson" ? "boisson.png" : "sushi2.png" %>
           </div>
       </div>
       <div class="reward-info">
