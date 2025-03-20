@@ -4,68 +4,65 @@
     <%= link_to "Editer", edit_fidelity_program_path(@fidelity_program), class: "fp-s-edit", data: {turbo: :false} %>
   </div>
 
-
-  <div id="fp-s-content">
-    <div id="fp-s-upper">
-      <div id="fp-s-left">
-        <div id="fp-s-info">
-
-          <div id="fp-s-name">
-            <h1><%= @fidelity_program.name.upcase %></h1>
-            <div id="fp-status">
-            <p>Statut</p>
-            <div >
-            <% if @fidelity_program.active = true %>
-            <div class="fp-on"></div>
-            <% else %>
-            <div class="fp-off"></div>
-            <% end %>
-            </div>
-            </div>
-          </div>
-
-          <div id="fp-s-left-info">
-          <div id="fpsli-date">
-            <% if @fidelity_program.created == nil %>
-              <p>N/A</p>
-              <% else %>
-              <p>Créé le : <%= @fidelity_program.created.strftime "%d/%m/%Y" %></p>
-              <% end %>
-          </div>
-          <div id="fpsli-ratio">
-            <p>Ratio points/euros : 1€ = <%= @fidelity_program.points_per_euro %> points</p>
-          </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div id="fp-s-qr-container">
-
-        <div id="fp-s-qr-text">
-          Présentez à vos clients :
-        </div>
-        <div id="fp-s-qrcode">
-          <%= @svg.html_safe %>
-        </div>
-
+  <div id="fp-s-name">
+    <h1><%= @fidelity_program.name.upcase %></h1>
+    <div id="fp-status">
+      <p>Statut</p>
+      <div >
+        <% if @fidelity_program.active = true %>
+        <div class="fp-on"></div>
+        <% else %>
+        <div class="fp-off"></div>
+        <% end %>
       </div>
     </div>
+  </div>
+
+  <div id="fp-s-left-info">
+    <div id="fpsli-date">
+      <% if @fidelity_program.created == nil %>
+        <p>N/A</p>
+        <% else %>
+        <p>Créé le : <%= @fidelity_program.created.strftime "%d/%m/%Y" %></p>
+        <% end %>
+    </div>
+    <div id="fpsli-ratio">
+      <p>Ratio points/euros : 1€ = <%= @fidelity_program.points_per_euro %> points</p>
+    </div>
+  </div>
+
+  <div id="fp-s-content">
+        <div id="fp-s-info">
+
+          <div id="fp-s-qr-container">
+            <div id="fp-s-qr-text">
+              Présentez à vos clients :
+            </div>
+            <div id="fp-s-qrcode">
+              <%= @svg.html_safe %>
+            </div>
+          </div>
+        </div>
 
     <div id="fp-s-cards">
       <% @fidelity_program.rewards.each do |reward| %>
       <div id="fp-s-card">
+        <div id="fp-s-icon">
+          <div class="image-wrapper">
+            <%= image_tag reward.name == "boisson" ? "boisson.png" : "sushi2.png" %>
+          </div>
+        </div>
         <div id="fp-s-card-info">
-          <div>
+          <div id="fpsci-name">
             <%= reward.name.upcase %>
           </div>
-        <div id="fp-s-card-pts">
-          <%= reward.points_required %> PTS
-        </div>
+          <div id="fp-s-card-pts">
+            <p>pour <div class="reward-points"><%= reward.points_required %></div> PTS</p>
           </div>
+        </div>
       </div>
       <% end %>
     </div>
 
-  </div>
+</div>
 </div>

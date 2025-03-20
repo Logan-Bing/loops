@@ -4,7 +4,6 @@ require 'date'
 
 class ParticipationsController < ApplicationController
   def show
-    @fidelity_program = FidelityProgram.find(params[:fidelity_program_id])
     @inscription = current_user.inscriptions.find_by(fidelity_program_id: params[:fidelity_program_id])
     @participation = Participation.find(params[:id])
 

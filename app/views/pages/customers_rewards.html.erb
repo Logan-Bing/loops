@@ -35,6 +35,7 @@
     <% @rewards.each do |r| %>
     <div class="reward-card" data-action="click->reward-card#cardClick" >
       <div class="reward-img">
+        <%= image_tag r.name == "sushi" ? "sushi.svg" : "landing.png" %>
       </div>
       <div class="reward-info">
         <div class="ri-name">
