@@ -57,7 +57,6 @@
 }
 
 .transaction{
-  margin-top: 32px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -107,12 +106,14 @@
 }
 
 .deduct-container{
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 .add-container{
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
