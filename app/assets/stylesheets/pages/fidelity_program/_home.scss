@@ -166,7 +166,7 @@
     }
 
     input{
-      width: 100%;
+      width: 75%;
       padding-left: 60px;
       border-radius: 36px;
       border: 1px solid #C7BDB4;
@@ -203,6 +203,7 @@
     border-radius: 12px;
     min-height: 100px;
     align-items: center;
+    box-shadow: 0px 8px 28px -6px rgba($color: #18274B, $alpha: 12.0);
   }
 
   .programm-text{
@@ -214,9 +215,22 @@
   .icon-con{
     display: flex;
     align-items: center;
-    background-color: #0AC5FF;
-    padding: 20px;
+    background-color: white;
+    padding: 10px;
     border-radius: 40px;
+    border-color: #FF850A;
+    border-style: solid;
+  }
+  .ic-img {
+    width: 100%; /* Prend toute la largeur du conteneur parent */
+    height: 100%; /* Prend toute la hauteur du conteneur parent */
+    overflow: hidden; /* Cache les parties de l'image qui dépassent */
+
+    img {
+      width: 40px; /* L'image prend toute la largeur du conteneur */
+      height: 40px; /* L'image prend toute la hauteur du conteneur */
+      object-fit: cover; /* Ajuste l'image pour couvrir tout le conteneur */
+    }
   }
 
   .programm-btn{
