@@ -4,64 +4,117 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+   body{
+  background: #0a192f;
+}
+.container{
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+  display: grid;
+  min-height: 100%;
+  width: 100%;
+  margin: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+h1{
+  font-size: 200px;
+  color: #64ffda;
+  font-family: monospace;
+  position: relative;
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+}
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+.circle{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #64ffda;
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  border-left-color: transparent;
+  position: absolute;
+  top: 200px;
+  left:135px;
+
+ animation: 1s infinite cir;
+
+}
+@keyframes cir{
+  0%{
+    transform: rotate(0deg);
   }
+  50%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.cir2{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid #64ffda;
+
+  border-right-color: transparent;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+ animation: 2s infinite cir2;
+
+}
+@keyframes cir2
+  0%{
+    transform: rotate(0deg);
+  }
+  30%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+.h {
+  left: 10px;
+  }
+p{
+
+  font-family: monospace;
+color: #64ffda;
+  font-size: 25px;
+  position: relative;
+  top: -100px;
+  }
+  @media(min-width: 700px)
+    {
+      .container {
+        display: flex;
+        width: 410px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: monospace;
+        }
+
+
+.container > h1:first-of-type { width:250px; }
+}
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+<body>
+  <html>
+
+  <body>
+    <div class="container">
+      <h1>4</h1>
+      <div class="circle">
+        <div class="cir2">
+
+        </div>
+      </div>
+
+      <h1 class="h">4</h1>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+    <center>
+      <p>Page not found</p>
+    </center>
 </body>
 </html>
