@@ -2,46 +2,6 @@
 
 <div class="customer-container">
   <h1>Liste des clients </h1>
-  <div class="filterbar">
-     <div id="filter-icon">
-        <i class="fa-solid fa-filter"></i>
-      </div>
-    <div class="container-filter">
-        <p>Filter By</p>
-    </div>
-    <div class="container-filter">
-      <div >
-      Date
-      </div>
-      <div class="icons">
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-    </div>
-    <div class="container-filter">
-      <div>
-      Order Type
-      </div>
-      <div class="icons">
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-    </div>
-    <div class="container-filter">
-      <div>
-      Order Status
-      </div>
-      <div class="icons">
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-    </div>
-    <div id="reset-filter">
-      <div class="icons">
-        <i class="fa-solid fa-rotate-right"></i>
-      </div>
-      <div>
-        Reset Filter
-      </div>
-    </div>
-  </div>
 
   <div id="header-user">
       <div id="email">
@@ -87,18 +47,6 @@
                   </p>
                 </div>
           <% end %>
-        </div>
-      </div>
-      <div id="modifier">
-        <div class="c-header">
-          <p>Modifier</p>
-        </div>
-        <div class="c-body">
-          <% @fidelity_program&.inscriptions&.each do |program| %>
-              <div class="c-content">
-                <i class="fa-solid fa-pen"></i>
-              </div>
-            <% end %>
         </div>
       </div>
   </div>
