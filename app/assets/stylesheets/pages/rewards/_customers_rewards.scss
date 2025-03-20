@@ -83,4 +83,24 @@
     font-size: 12px;
     color: #888888;
   }
+
+  .ri-reward-img {
+    display: flex;
+    align-items: center;
+    background-color: #0AC5FF;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .ri-image-wrapper {
+    width: 100%; /* Prend toute la largeur du conteneur parent */
+    height: 100%; /* Prend toute la hauteur du conteneur parent */
+    overflow: hidden; /* Cache les parties de l'image qui dépassent */
+
+    img {
+      width: 40px; /* L'image prend toute la largeur du conteneur */
+      height: 40px; /* L'image prend toute la hauteur du conteneur */
+      object-fit: cover; /* Ajuste l'image pour couvrir tout le conteneur */
+    }
+  }
 }
