@@ -1,11 +1,24 @@
-<h1>Participations show</h1>
+<div class="container-participation-show">
+    <div class="sih-link">
+      <i class="fa-solid fa-chevron-left"></i>
+      <%= link_to "Retour", root_path, class: "back-btn" %>
+    </div>
 
-<p>Nombre de points utilisés :</p> <%= @participation.points.abs %>
+  <%# <p>Nombre de points utilisés :</p> <%= @participation.points.abs %>
 
-<br>
+  <div id="qr-code">
+    <div id="qr-code-header">
+      <p>
+        Présentez votre Qr code sur place
+      </p>
+    </div>
+    <div id="qr-code-details">
+      <%= @svg.html_safe %>
+    </div>
+  </div>
 
-<%= @svg.html_safe %>
 
-<br>
 
-<%= link_to "Mon programme", fidelity_program_inscription_path(@fidelity_program, @inscription) %>
+
+  <%# <%= link_to "Mon programme", fidelity_program_inscription_path(@fidelity_program, @inscription) %>
+</div>

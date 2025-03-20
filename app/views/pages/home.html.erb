@@ -73,10 +73,16 @@
 
     <% current_user.inscriptions.each do |i| %>
       <%= link_to fidelity_program_inscription_path(i.fidelity_program.id, i), class: "programm-container" do %>
-        <%= i.fidelity_program.name %>
-        <i class="fa-solid fa-chevron-left"></i>
+        <div class="programm-btn">
+          <div class="icon-con">
+            <%= image_tag 'sushi.svg', alt:"image de sushi" %>
+          </div>
+          <%= content_tag(:span, i.fidelity_program.name, class:"programm-text") %>
+          <i class="fa-solid fa-chevron-left chevron"></i>
+        </div>
       <% end %>
     <% end %>
+
 
 </div>
 
