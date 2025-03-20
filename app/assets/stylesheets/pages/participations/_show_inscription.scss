@@ -1,0 +1,30 @@
+.container-participation-show{
+  margin-top: 61px;
+  margin-left: 32px;
+  height: 100vh;
+}
+
+#qr-code{
+  margin-top: 91px;
+  height: 520px;
+  width: 329px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+#qr-code-header{
+  margin-top: 46px;
+  margin-left: 55px;
+  margin-right: 54px;
+  margin-bottom: 32px;
+
+  p{
+    font-family: $body-font;
+    font-weight: 700;
+    font-size: 24px;
+    color: black;
+  }
+}
+
+#qr-code-details{
+  margin: 0 66px 187px 66px;
+}
