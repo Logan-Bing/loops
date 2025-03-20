@@ -1,0 +1,98 @@
+@media (min-width : 200px) and (max-width : 900px) {
+
+  #rs-logo {
+    height: 80px;
+    width: 80px;
+    background: $second-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #rs-body {
+    margin-top: 32px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 28px -6px rgba($color: #18274B, $alpha: 12.0);
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    height: fit-content;
+    padding: 32px 41px;
+    margin-bottom: 32px;
+  }
+
+  #rs-center {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #rs-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #rs-name {
+    font-size: 32px;
+    font-weight: 600;
+
+    p {
+      text-align: left;
+    }
+  }
+
+  #rs-description {
+    font-size: 17px;
+
+    p {
+      text-align: left;
+    }
+  }
+
+  #rs-btn {
+    padding: 20px 42px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: $primary-color;
+    border-radius: 36px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 8px 28px -6px rgba($color: #18274B, $alpha: 12.0);
+    border: 0.5px solid #FF930F;
+
+    .td-none {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 2px;
+      border: none;
+      background-color: #FF930F;
+    }
+  }
+
+  #rs-points {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    p {
+      font-size: 32px;
+      font-weight: 600;
+    }
+  }
+
+  #rs-foot {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+}
