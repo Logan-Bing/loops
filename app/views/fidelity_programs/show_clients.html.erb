@@ -38,11 +38,11 @@
             <% @fidelity_program&.inscriptions&.each do |i| %>
               <% i.participations.each do |p| %>
                 <p><% @sum += p.points %></p>
-              <% end %>
                 <div class="c-content">
                   <p>
                   <%= @sum %>
                   </p>
+              <% end %>
                 </div>
           <% end %>
         </div>
